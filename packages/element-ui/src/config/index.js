@@ -41,6 +41,43 @@ import tableFormColumn from './rule/tableFormColumn';
 import image from './rule/image';
 import signaturePad from './rule/signaturePad';
 import title from './rule/title';
+import fcDynamicRender from './rule/fcDynamicRender';
+import qrCodeBox from './rule/qrCodeBox';
+import barCodeBox from './rule/barCodeBox';
+import stepForm from './rule/stepForm';
+import iframeBox from './rule/iframeBox';
+import fcEcharts from './rule/fcEcharts';
+import apiKeyInput from './rule/apiKeyInput';
+import nestedForm from './rule/nestedForm';
+import printForm from './rule/printForm';
+import fcFlow from './rule/fcFlow';
+import fcMarkdown from './rule/fcMarkdown';
+import infiniteForm from './rule/infiniteForm';
+import dataTable from './rule/dataTable';
+import videoBox from './rule/videoBox';
+import audioBox from './rule/audioBox';
+import fcCity from './rule/fcCity';
+import fcAiPanel from './rule/fcAiPanel';
+import imageBox from './rule/imageBox';
+import dynamicComponent from './rule/dynamicComponent';
+import toolsBar from './rule/toolsBar';
+import globalVariableConfig from './rule/globalVariableConfig';
+import globalClassConfig from './rule/globalClassConfig';
+import globalFetchConfig from './rule/globalFetchConfig';
+import dataView from './rule/dataView';
+import infiniteTableForm from './rule/infiniteTableForm';
+import nestedTableForm from './rule/nestedTableForm';
+import aiChat from './rule/aiChat';
+import dataset from './rule/dataset';
+import aiTool from './rule/aiTool';
+import globalEventConfig from './rule/globalEventConfig';
+import mStepForm from './rule/mStepForm';
+import infiniteTableFormView from './rule/infiniteTableFormView';
+import nestedTableFormView from './rule/nestedTableFormView';
+import fcMermaid from './rule/fcMermaid';
+import fcTdtMapPicker from './rule/fcTdtMapPicker';
+import stepFormItem from './rule/stepFormItem';
+import signature from './rule/signature';
 
 
 const ruleList = [
@@ -49,6 +86,43 @@ const ruleList = [
     alert, button, text, title, html, divider, tag, image,
     row, table, tabs, space, card, collapse,
     col, tabPane, collapseItem,
+    fcDynamicRender,
+    qrCodeBox,
+    barCodeBox,
+    stepForm,
+    iframeBox,
+    fcEcharts,
+    apiKeyInput,
+    nestedForm,
+    printForm,
+    fcFlow,
+    fcMarkdown,
+    infiniteForm,
+    dataTable,
+    videoBox,
+    audioBox,
+    fcCity,
+    fcAiPanel,
+    imageBox,
+    dynamicComponent,
+    toolsBar,
+    globalVariableConfig,
+    globalClassConfig,
+    globalFetchConfig,
+    dataView,
+    infiniteTableForm,
+    nestedTableForm,
+    aiChat,
+    dataset,
+    aiTool,
+    globalEventConfig,
+    mStepForm,
+    infiniteTableFormView,
+    nestedTableFormView,
+    fcMermaid,
+    fcTdtMapPicker,
+    stepFormItem,
+    signature,
 ];
 
 export default ruleList;

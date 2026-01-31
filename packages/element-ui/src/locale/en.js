@@ -242,6 +242,24 @@ const En = {
             flat: 'Flat',
             solid: 'Stereoscopic',
         },
+        background: {
+            name: 'Background',
+            image: 'Background image',
+            url: 'Image URL',
+            gradient: 'Gradient',
+            gradientStart: 'Start color',
+            gradientEnd: 'End color',
+            repeat: 'Repeat',
+            position: 'Position',
+            size: 'Size',
+            repeatAll: 'Repeat',
+            repeatX: 'Repeat X',
+            repeatY: 'Repeat Y',
+            noRepeat: 'No repeat',
+            cover: 'Cover',
+            contain: 'Contain',
+            auto: 'Auto',
+        },
         font: {
             name: 'Font',
             size: 'Size',
@@ -938,6 +956,949 @@ const En = {
                 disabled: 'Disabled',
                 limit: 'Maximum number of uploads allowed'
             }
+        },
+        fcDynamicRender: {
+            name: 'Vue Component',
+            info: 'Supports Vue single-file component format, including template, script, and style',
+            props: {
+                vueContent: 'Complete Vue SFC code content',
+                formCreateInject: 'form-create injected data'
+            },
+            event: {
+                mounted: 'Triggered after component mount',
+                error: 'Triggered on render error'
+            }
+        },
+        QrCodeBox: {
+            name: 'QR Code',
+            info: 'Generate QR code image for information encoding',
+            props: {
+                value: 'QR code content',
+                size: 'QR code size (px)',
+                colorDark: 'Dark color',
+                colorLight: 'Light color',
+                correctLevel: 'Error correction level'
+            },
+            event: {
+                mounted: 'Triggered after component mount'
+            }
+        },
+        BarCodeBox: {
+            name: 'Barcode',
+            info: 'Generate barcode for product encoding',
+            props: {
+                value: 'Barcode content',
+                format: 'Barcode format',
+                lineColor: 'Line color',
+                width: 'Width',
+                height: 'Height',
+                displayValue: 'Display value',
+                textAlign: 'Text alignment'
+            },
+            event: {
+                mounted: 'Triggered after component mount'
+            }
+        },
+        StepForm: {
+            name: 'Step Form',
+            info: 'Display form content in steps, guide user to fill in step by step',
+            props: {
+                activeStep: 'Current step',
+                showSteps: 'Show step bar',
+                simple: 'Simple mode',
+                finishBtnText: 'Finish button text',
+                validateOnChange: 'Validate on change'
+            },
+            event: {
+                'step-change': 'Triggered when step changes',
+                finish: 'Triggered when form is finished'
+            }
+        },
+        IframeBox: {
+            name: 'Iframe',
+            info: 'Embed external web page content in the form',
+            props: {
+                src: 'Page URL',
+                width: 'Width',
+                height: 'Height',
+                loading: 'Show loading state',
+                showLoading: 'Show loading animation',
+                allowFullscreen: 'Allow fullscreen'
+            },
+            event: {
+                load: 'Triggered when page loads successfully',
+                error: 'Triggered when page fails to load',
+                mounted: 'Triggered after component mount'
+            }
+        },
+        StyleEditor: {
+            name: 'Style Editor',
+            info: 'Visual style editor',
+            props: {
+                width: 'Width',
+                height: 'Height',
+                color: 'Text color',
+                backgroundColor: 'Background color',
+                borderRadius: 'Border radius',
+                boxShadow: 'Shadow',
+                margin: 'Margin',
+                padding: 'Padding'
+            }
+        },
+        ConfigPanel: {
+            name: 'Config Panel',
+            info: 'Comprehensive configuration panel',
+            props: {
+                title: 'Title',
+                field: 'Field name',
+                defaultValue: 'Default value',
+                placeholder: 'Placeholder',
+                disabled: 'Disabled',
+                readOnly: 'Read only',
+                clearable: 'Clearable',
+                required: 'Required',
+                validateType: 'Validate type',
+                pattern: 'Regular expression',
+                min: 'Minimum',
+                max: 'Maximum',
+                minLength: 'Minimum length',
+                maxLength: 'Maximum length'
+            }
+        },
+        ControlConfig: {
+            name: 'Linkage Config',
+            info: 'Configure form linkage conditions',
+            props: {
+                field: 'Field',
+                operator: 'Operator',
+                value: 'Value',
+                logic: 'Logic relation'
+            }
+        },
+        FcEcharts: {
+            name: 'Chart',
+            info: 'Display data visualization charts using ECharts',
+            props: {
+                width: 'Width',
+                height: 'Height',
+                theme: 'Theme',
+                loading: 'Loading state',
+                autoResize: 'Auto resize',
+                options: 'Chart options'
+            },
+            event: {
+                click: 'Triggered when clicking on data point',
+                legendselectchanged: 'Triggered when legend selection changes',
+                datazoom: 'Triggered when zoom area changes',
+                finished: 'Triggered when rendering completes',
+                mounted: 'Triggered after component mount'
+            }
+        },
+        ApiKeyInput: {
+            name: 'API Key',
+            info: 'Input component for API keys with validation support',
+            props: {
+                placeholder: 'Placeholder',
+                disabled: 'Disabled',
+                clearable: 'Clearable',
+                showPassword: 'Show password',
+                showValidation: 'Show validation',
+                validationUrl: 'Validation URL',
+                validateField: 'Validation field',
+                errorMsg: 'Error message'
+            },
+            event: {
+                validate: 'Triggered when validating API key',
+                'validation-success': 'Triggered when validation succeeds',
+                'validation-fail': 'Triggered when validation fails'
+            }
+        },
+        NestedForm: {
+            name: 'Nested Form',
+            info: 'Nested form container that supports multiple levels of subforms',
+            props: {
+                title: 'Title',
+                disabled: 'Disabled',
+                required: 'Required',
+                min: 'Minimum items',
+                max: 'Maximum items',
+                showAdd: 'Show add button',
+                showDelete: 'Show delete button',
+                sortable: 'Sortable',
+                expandable: 'Expandable items',
+                addBtnText: 'Add button text',
+                showPagination: 'Show pagination',
+                pageSize: 'Page size'
+            },
+            event: {
+                add: 'Triggered when item is added',
+                remove: 'Triggered when item is removed',
+                expand: 'Triggered when item is expanded/collapsed',
+                'page-change': 'Triggered when page changes'
+            }
+        },
+        PrintForm: {
+            name: 'Print Form',
+            info: 'Print-friendly form renderer with print and preview functionality',
+            props: {
+                title: 'Title',
+                subtitle: 'Subtitle',
+                disabled: 'Disabled',
+                showHeader: 'Show header',
+                showFooter: 'Show footer',
+                showActions: 'Show actions',
+                showPrintTime: 'Show print time',
+                showPage: 'Show page info',
+                paperSize: 'Paper size',
+                orientation: 'Orientation',
+                margin: 'Margin',
+                printUrl: 'Print service URL'
+            },
+            event: {
+                print: 'Triggered when printing',
+                preview: 'Triggered when preview is opened'
+            }
+        },
+        FcFlow: {
+            name: 'Flowchart',
+            info: 'Display flowcharts and diagrams using Mermaid',
+            props: {
+                title: 'Title',
+                disabled: 'Disabled',
+                editable: 'Editable',
+                showHeader: 'Show header',
+                loading: 'Loading',
+                diagramType: 'Diagram type',
+                direction: 'Direction',
+                theme: 'Theme',
+                height: 'Height'
+            },
+            event: {
+                click: 'Triggered when clicking on a node',
+                rendered: 'Triggered when diagram is rendered'
+            }
+        },
+        fcFlow: {
+            loading: 'Loading diagram...',
+            renderError: 'Failed to render diagram',
+            editDiagram: 'Edit Diagram',
+            preview: 'Preview'
+        },
+        FcMarkdown: {
+            name: 'Markdown',
+            info: 'Display and edit markdown content',
+            props: {
+                title: 'Title',
+                disabled: 'Disabled',
+                editable: 'Editable',
+                showHeader: 'Show header',
+                showFooter: 'Show footer',
+                showToolbar: 'Show toolbar',
+                editorRows: 'Editor rows'
+            },
+            event: {
+                change: 'Triggered when content changes',
+                rendered: 'Triggered when markdown is rendered',
+                copy: 'Triggered when content is copied'
+            }
+        },
+        fcMarkdown: {
+            words: 'Words',
+            readTime: 'Read time',
+            minutes: 'min'
+        },
+        InfiniteForm: {
+            name: 'Infinite Form',
+            info: 'Virtual scrolling form for large datasets',
+            props: {
+                title: 'Title',
+                disabled: 'Disabled',
+                multiple: 'Multiple select',
+                showHeader: 'Show header',
+                showFooter: 'Show footer',
+                showActions: 'Show actions',
+                showInfo: 'Show info',
+                remoteLoad: 'Remote load',
+                loadUrl: 'Load URL',
+                pageSize: 'Page size',
+                itemHeight: 'Item height',
+                itemKey: 'Item key field',
+                itemTitle: 'Item title field'
+            },
+            event: {
+                change: 'Triggered when selection changes',
+                load: 'Triggered when data is loaded',
+                select: 'Triggered when item is selected',
+                confirm: 'Triggered when confirm button is clicked',
+                scroll: 'Triggered when scrolling'
+            }
+        },
+        infiniteForm: {
+            total: 'Total',
+            loaded: 'Loaded',
+            loading: 'Loading...',
+            finished: 'No more data',
+            loadMore: 'Load more'
+        },
+        DataTable: {
+            name: 'Data Table',
+            info: 'Advanced data table with sorting, filtering, and pagination',
+            props: {
+                title: 'Title',
+                disabled: 'Disabled',
+                showActions: 'Show actions',
+                showSelection: 'Show selection',
+                showIndex: 'Show index',
+                showExport: 'Show export',
+                showPagination: 'Show pagination',
+                stripe: 'Stripe',
+                border: 'Border',
+                size: 'Size',
+                remoteData: 'Remote data',
+                remoteUrl: 'Remote URL',
+                pageSize: 'Page size'
+            },
+            event: {
+                'selection-change': 'Triggered when selection changes',
+                'row-click': 'Triggered when row is clicked',
+                'cell-click': 'Triggered when cell is clicked',
+                'sort-change': 'Triggered when sort changes',
+                'filter-change': 'Triggered when filter changes',
+                edit: 'Triggered when edit button is clicked',
+                delete: 'Triggered when delete button is clicked',
+                refresh: 'Triggered when refresh is clicked',
+                export: 'Triggered when export is clicked'
+            }
+        },
+        dataTable: {
+            operations: 'Operations',
+            columnConfig: 'Column Config'
+        },
+        VideoBox: {
+            name: 'Video',
+            info: 'Video player component',
+            props: {
+                title: 'Title',
+                src: 'Video URL',
+                poster: 'Poster URL',
+                disabled: 'Disabled',
+                controls: 'Show controls',
+                autoplay: 'Autoplay',
+                loop: 'Loop',
+                muted: 'Muted',
+                showHeader: 'Show header',
+                showCustomControls: 'Custom controls',
+                height: 'Height'
+            },
+            event: {
+                play: 'Triggered when video plays',
+                pause: 'Triggered when video pauses',
+                ended: 'Triggered when video ends',
+                timeupdate: 'Triggered when time updates',
+                error: 'Triggered when error occurs'
+            }
+        },
+        videoBox: {
+            notSupported: 'Your browser does not support the video tag',
+            noVideo: 'No video',
+            selectVideo: 'Select Video'
+        },
+        AudioBox: {
+            name: 'Audio',
+            info: 'Audio player component',
+            props: {
+                title: 'Title',
+                src: 'Audio URL',
+                trackName: 'Track name',
+                artist: 'Artist',
+                artwork: 'Artwork URL',
+                disabled: 'Disabled',
+                autoplay: 'Autoplay',
+                loop: 'Loop',
+                showHeader: 'Show header',
+                showAlbumArt: 'Show album art',
+                showRateControl: 'Show rate control'
+            },
+            event: {
+                play: 'Triggered when audio plays',
+                pause: 'Triggered when audio pauses',
+                ended: 'Triggered when audio ends',
+                timeupdate: 'Triggered when time updates',
+                error: 'Triggered when error occurs'
+            }
+        },
+        audioBox: {
+            notSupported: 'Your browser does not support the audio tag',
+            noAudio: 'No audio',
+            selectAudio: 'Select Audio',
+            unknownTrack: 'Unknown Track'
+        },
+        FcCity: {
+            name: 'City Picker',
+            info: 'China city/region picker with cascading selection',
+            props: {
+                title: 'Title',
+                disabled: 'Disabled',
+                clearable: 'Clearable',
+                filterable: 'Filterable',
+                showAllLevels: 'Show all levels',
+                areaCode: 'Return area code',
+                level: 'Level',
+                size: 'Size',
+                dataType: 'Data type'
+            },
+            event: {
+                change: 'Triggered when selection changes',
+                'expand-change': 'Triggered when panel expands',
+                blur: 'Triggered when blur',
+                focus: 'Triggered when focus',
+                'visible-change': 'Triggered when visibility changes'
+            }
+        },
+        FcAiPanel: {
+            name: 'AI Assistant',
+            info: 'AI-powered chat assistant for form generation',
+            props: {
+                title: 'Title',
+                disabled: 'Disabled',
+                showHeader: 'Show header',
+                apiKey: 'API Key',
+                apiUrl: 'API URL',
+                model: 'Model',
+                maxLength: 'Max length'
+            },
+            event: {
+                send: 'Triggered when message is sent',
+                clear: 'Triggered when history is cleared',
+                'generate-form': 'Triggered when form is generated'
+            }
+        },
+        imageBox: {
+            noImage: 'No image',
+            selectImage: 'Select Image',
+            loading: 'Loading...',
+            error: 'Failed to load image'
+        },
+        ImageBox: {
+            name: 'Image',
+            info: 'Image display and upload component',
+            props: {
+                title: 'Title',
+                src: 'Image URL',
+                alt: 'Alt text',
+                caption: 'Caption',
+                fit: 'Fit mode',
+                disabled: 'Disabled',
+                lazy: 'Lazy load',
+                showHeader: 'Show header',
+                editable: 'Editable',
+                deletable: 'Deletable',
+                uploadable: 'Uploadable',
+                height: 'Height'
+            },
+            event: {
+                load: 'Triggered when image loads',
+                error: 'Triggered when error occurs',
+                click: 'Triggered when clicked',
+                preview: 'Triggered when preview is opened',
+                change: 'Triggered when image changes'
+            }
+        },
+        DynamicComponent: {
+            name: 'Dynamic Component',
+            info: 'Dynamically load and render Vue components',
+            props: {
+                title: 'Title',
+                disabled: 'Disabled',
+                componentName: 'Component name',
+                lazy: 'Lazy load'
+            },
+            event: {
+                ready: 'Triggered when component is loaded',
+                error: 'Triggered when load error occurs',
+                mounted: 'Triggered when component is mounted'
+            }
+        },
+        ToolsBar: {
+            name: 'Tools Bar',
+            info: 'Toolbar with buttons, dropdowns, and search',
+            props: {
+                title: 'Title',
+                showMore: 'Show more menu',
+                moreThreshold: 'More threshold'
+            },
+            event: {
+                click: 'Triggered when button is clicked',
+                command: 'Triggered when dropdown item is selected',
+                search: 'Triggered when search is executed',
+                input: 'Triggered when input changes'
+            }
+        },
+        globalVariableConfig: {
+            add: 'Add Variable',
+            name: 'Name',
+            value: 'Value',
+            description: 'Description',
+            scope: 'Scope',
+            actions: 'Actions',
+            namePlaceholder: 'Variable name',
+            valuePlaceholder: 'Variable value',
+            descriptionPlaceholder: 'Description (optional)',
+            tips: 'Global variables can be referenced in form rules using ${variableName}',
+            system: 'System'
+        },
+        GlobalVariableConfig: {
+            name: 'Global Variables',
+            info: 'Configure global variables for form rules'
+        },
+        globalClassConfig: {
+            add: 'Add Class',
+            namePlaceholder: 'Class name',
+            contentPlaceholder: 'CSS rules',
+            preview: 'Preview',
+            previewText: 'Preview text',
+            empty: 'No custom CSS classes defined'
+        },
+        GlobalClassConfig: {
+            name: 'Global CSS Classes',
+            info: 'Define custom CSS classes for form components'
+        },
+        globalFetchConfig: {
+            add: 'Add API',
+            namePlaceholder: 'API name',
+            url: 'URL',
+            method: 'Method',
+            headers: 'Headers',
+            urlPlaceholder: 'API endpoint URL',
+            headersPlaceholder: 'JSON format headers',
+            test: 'Test',
+            result: 'Result',
+            empty: 'No global APIs configured'
+        },
+        GlobalFetchConfig: {
+            name: 'Global API Fetch',
+            info: 'Configure global API endpoints for data fetching'
+        },
+        DataView: {
+            name: 'Data View',
+            info: 'Display data in multiple view modes (list, card, stats)',
+            props: {
+                title: 'Title',
+                disabled: 'Disabled',
+                showHeader: 'Show header',
+                showPagination: 'Show pagination',
+                refreshable: 'Refreshable',
+                viewMode: 'View mode',
+                remoteData: 'Remote data',
+                remoteUrl: 'Remote URL',
+                pageSize: 'Page size'
+            },
+            event: {
+                click: 'Triggered when item is clicked',
+                refresh: 'Triggered when refresh is clicked',
+                change: 'Triggered when page changes',
+                error: 'Triggered when error occurs'
+            }
+        },
+        dataView: {
+            loading: 'Loading...',
+            loadError: 'Failed to load data'
+        },
+        InfiniteTableForm: {
+            name: 'Infinite Table Form',
+            info: 'Table with virtual scrolling and inline editing',
+            props: {
+                title: 'Title',
+                disabled: 'Disabled',
+                addable: 'Addable',
+                editable: 'Editable',
+                deletable: 'Deletable',
+                showSelection: 'Show selection',
+                showIndex: 'Show index',
+                showPagination: 'Show pagination',
+                stripe: 'Stripe',
+                border: 'Border',
+                height: 'Height',
+                remoteData: 'Remote data',
+                remoteUrl: 'Remote URL',
+                pageSize: 'Page size'
+            },
+            event: {
+                add: 'Triggered when row is added',
+                edit: 'Triggered when edit button is clicked',
+                delete: 'Triggered when row is deleted',
+                'selection-change': 'Triggered when selection changes',
+                'cell-change': 'Triggered when cell value changes'
+            }
+        },
+        infiniteTableForm: {
+            add: 'Add Row',
+            actions: 'Actions'
+        },
+        NestedTableForm: {
+            name: 'Nested Table Form',
+            info: 'Table with expandable child rows',
+            props: {
+                title: 'Title',
+                disabled: 'Disabled',
+                addable: 'Addable',
+                editable: 'Editable',
+                deletable: 'Deletable',
+                expandable: 'Expandable',
+                defaultExpandAll: 'Expand all by default',
+                showSelection: 'Show selection',
+                showIndex: 'Show index',
+                stripe: 'Stripe',
+                border: 'Border',
+                height: 'Height'
+            },
+            event: {
+                add: 'Triggered when row is added',
+                edit: 'Triggered when edit button is clicked',
+                delete: 'Triggered when row is deleted',
+                'add-child': 'Triggered when child row is added',
+                'delete-child': 'Triggered when child row is deleted',
+                'expand-change': 'Triggered when expand state changes',
+                'selection-change': 'Triggered when selection changes'
+            }
+        },
+        nestedTableForm: {
+            add: 'Add',
+            addChild: 'Add Child',
+            actions: 'Actions',
+            expandAll: 'Expand All',
+            collapseAll: 'Collapse All'
+        },
+        AiChat: {
+            name: 'AI Chat',
+            info: 'AI chat interface for interacting with AI assistants',
+            props: {
+                title: 'Title',
+                apiKey: 'API Key',
+                model: 'Model',
+                placeholder: 'Placeholder',
+                disabled: 'Disabled',
+                showHistory: 'Show history',
+                showClear: 'Show clear button',
+                maxMessages: 'Max messages',
+                temperature: 'Temperature'
+            },
+            event: {
+                send: 'Triggered when message is sent',
+                error: 'Triggered on error'
+            }
+        },
+        aiChat: {
+            placeholder: 'Ask AI...',
+            send: 'Send',
+            clear: 'Clear chat',
+            thinking: 'AI is thinking...',
+            error: 'Failed to get response',
+            noApiKey: 'Please configure API key first'
+        },
+        Dataset: {
+            name: 'Dataset',
+            info: 'Dataset management component with import/export capabilities',
+            props: {
+                title: 'Title',
+                disabled: 'Disabled',
+                showImport: 'Show import',
+                showExport: 'Show export',
+                showRefresh: 'Show refresh',
+                showClear: 'Show clear',
+                showPagination: 'Show pagination',
+                importUrl: 'Import URL',
+                exportUrl: 'Export URL',
+                pageSize: 'Page size'
+            },
+            event: {
+                import: 'Triggered when import is complete',
+                export: 'Triggered when export is requested',
+                refresh: 'Triggered when refresh is clicked',
+                clear: 'Triggered when clear is clicked'
+            }
+        },
+        dataset: {
+            import: 'Import',
+            export: 'Export',
+            refresh: 'Refresh',
+            clear: 'Clear',
+            importSuccess: 'Import completed successfully',
+            importError: 'Import failed',
+            exportSuccess: 'Export completed',
+            clearConfirm: 'Are you sure you want to clear all data?',
+            noData: 'No data available'
+        },
+        AiTool: {
+            name: 'AI Tool',
+            info: 'AI configuration and quick action tool',
+            props: {
+                apiKey: 'API Key',
+                model: 'Model',
+                temperature: 'Temperature',
+                maxTokens: 'Max tokens',
+                systemPrompt: 'System prompt',
+                enabledTools: 'Enabled tools'
+            },
+            event: {
+                execute: 'Triggered when quick action is executed',
+                save: 'Triggered when configuration is saved',
+                test: 'Triggered when API key is tested'
+            }
+        },
+        aiTool: {
+            statusValid: 'Valid',
+            statusInvalid: 'Invalid',
+            apiKey: 'API Key',
+            apiKeyPlaceholder: 'Enter your API key',
+            testKey: 'Test Key',
+            model: 'Model',
+            temperature: 'Temperature',
+            maxTokens: 'Max Tokens',
+            systemPrompt: 'System Prompt',
+            systemPromptPlaceholder: 'Enter system prompt for AI',
+            quickActions: 'Quick Actions',
+            tools: 'Tools',
+            toolGenerateForm: 'Generate Form',
+            toolGenerateRule: 'Generate Rule',
+            toolOptimizePrompt: 'Optimize Prompt',
+            toolTranslate: 'Translate',
+            toolExplainField: 'Explain Field',
+            actionGenerateForm: 'Generate Form',
+            actionOptimize: 'Optimize',
+            actionTranslate: 'Translate',
+            actionExplain: 'Explain',
+            saveConfig: 'Save',
+            resetConfig: 'Reset',
+            configSaved: 'Configuration saved'
+        },
+        GlobalEventConfig: {
+            name: 'Global Event Config',
+            info: 'Configure global events and actions',
+            props: {
+                events: 'Events'
+            },
+            event: {
+                change: 'Triggered when configuration changes'
+            }
+        },
+        globalEventConfig: {
+            title: 'Global Event Configuration',
+            addEvent: 'Add Event',
+            event: 'Event',
+            eventName: 'Event Name',
+            eventNamePlaceholder: 'Enter event name',
+            triggerType: 'Trigger Type',
+            intervalMs: 'Interval (ms)',
+            targetFields: 'Target Fields',
+            targetsPlaceholder: 'Select target fields',
+            condition: 'Condition',
+            conditionPlaceholder: 'Enter condition expression',
+            actions: 'Actions',
+            actionValuePlaceholder: 'Enter action value',
+            addAction: 'Add Action',
+            noEvents: 'No events configured'
+        },
+        MStepForm: {
+            name: 'Multi-Step Form',
+            info: 'Multi-step form with progress tracking',
+            props: {
+                title: 'Title',
+                disabled: 'Disabled',
+                showActions: 'Show actions',
+                showProgress: 'Show progress'
+            },
+            event: {
+                'step-change': 'Triggered when step changes',
+                submit: 'Triggered when form is submitted',
+                change: 'Triggered when field values change'
+            }
+        },
+        mStepForm: {
+            prev: 'Previous',
+            next: 'Next',
+            submit: 'Submit',
+            emptyStep: 'This step has no fields',
+            stepProgress: 'Step {current} of {total}',
+            submitSuccess: 'Form submitted successfully',
+            fieldRequired: '{field} is required'
+        },
+        InfiniteTableFormView: {
+            name: 'Infinite Table Form (View)',
+            info: 'Preview mode for infinite table form',
+            props: {
+                title: 'Title',
+                showIndex: 'Show index',
+                showSelection: 'Show selection',
+                showActions: 'Show actions',
+                showPagination: 'Show pagination',
+                height: 'Height',
+                pageSize: 'Page size'
+            },
+            event: {
+                add: 'Triggered when add is clicked',
+                edit: 'Triggered when edit is clicked',
+                delete: 'Triggered when delete is clicked',
+                refresh: 'Triggered when refresh is clicked',
+                change: 'Triggered when data changes'
+            }
+        },
+        infiniteTableFormView: {
+            title: 'Data Preview',
+            index: '#',
+            actions: 'Actions',
+            addRow: 'Add Row',
+            dataCount: '{visible} of {total} items displayed',
+            rowAdded: 'Row added',
+            rowDeleted: 'Row deleted'
+        },
+        NestedTableFormView: {
+            name: 'Nested Table Form (View)',
+            info: 'Preview mode for nested table form',
+            props: {
+                title: 'Title',
+                showIndex: 'Show index',
+                showActions: 'Show actions',
+                rowKey: 'Row key',
+                displayField: 'Display field'
+            },
+            event: {
+                add: 'Triggered when add is clicked',
+                edit: 'Triggered when edit is clicked',
+                delete: 'Triggered when delete is clicked',
+                'add-child': 'Triggered when child is added',
+                'delete-child': 'Triggered when child is deleted',
+                change: 'Triggered when data changes'
+            }
+        },
+        nestedTableFormView: {
+            title: 'Nested Data Preview',
+            index: '#',
+            actions: 'Actions',
+            children: 'Children of {name}',
+            addRoot: 'Add Root',
+            addChild: 'Add Child',
+            noChildren: 'No child items',
+            expandAll: 'Expand All',
+            collapseAll: 'Collapse All',
+            dataCount: '{total} items',
+            rowAdded: 'Root row added',
+            childAdded: 'Child row added',
+            rowDeleted: 'Row deleted',
+            childDeleted: 'Child row deleted'
+        },
+        FcMermaid: {
+            name: 'Mermaid Chart',
+            info: 'Display charts and diagrams using Mermaid',
+            props: {
+                title: 'Title',
+                disabled: 'Disabled',
+                showHeader: 'Show header',
+                diagramType: 'Diagram type',
+                direction: 'Direction',
+                theme: 'Theme',
+                height: 'Height'
+            },
+            event: {
+                rendered: 'Triggered when diagram is rendered',
+                error: 'Triggered on error',
+                edit: 'Triggered when edit button is clicked'
+            }
+        },
+        fcMermaid: {
+            renderSuccess: 'Diagram rendered successfully',
+            renderError: 'Failed to render diagram',
+            exportSuccess: 'Diagram exported successfully'
+        },
+        FcTdtMapPicker: {
+            name: 'Map Location Picker',
+            info: 'Pick location on TDT map',
+            props: {
+                title: 'Title',
+                disabled: 'Disabled',
+                showHeader: 'Show header',
+                showAddress: 'Show address',
+                showCoordinate: 'Show coordinate',
+                height: 'Height',
+                ak: 'API Key',
+                center: 'Center',
+                zoom: 'Zoom level',
+                markerDraggable: 'Marker draggable'
+            },
+            event: {
+                locate: 'Triggered when location is found',
+                error: 'Triggered on error'
+            }
+        },
+        fcTdtMapPicker: {
+            addressPlaceholder: 'Selected address',
+            latLng: 'Coordinates',
+            addressCopied: 'Address copied to clipboard',
+            locationFound: 'Location found',
+            locationFailed: 'Failed to get location',
+            geolocationNotSupported: 'Geolocation is not supported'
+        },
+        StepFormItem: {
+            name: 'Step Form Item',
+            info: 'Step form item with fields',
+            props: {
+                label: 'Label',
+                description: 'Description',
+                fields: 'Fields',
+                isActive: 'Is active',
+                isCompleted: 'Is completed',
+                showExpand: 'Show expand',
+                showActions: 'Show actions',
+                showPrev: 'Show previous',
+                showNext: 'Show next',
+                showSubmit: 'Show submit'
+            },
+            event: {
+                prev: 'Triggered when previous is clicked',
+                next: 'Triggered when next is clicked',
+                submit: 'Triggered when submit is clicked',
+                expand: 'Triggered when expanded',
+                collapse: 'Triggered when collapsed'
+            }
+        },
+        stepFormItem: {
+            expand: 'Expand',
+            collapse: 'Collapse',
+            prev: 'Previous',
+            next: 'Next',
+            submit: 'Submit',
+            noFields: 'No fields in this step',
+            fieldsCount: '{count} fields',
+            submitSuccess: 'Step submitted successfully'
+        },
+        Signature: {
+            name: 'Signature',
+            info: 'Digital signature component',
+            props: {
+                title: 'Title',
+                disabled: 'Disabled',
+                showHeader: 'Show header',
+                showPreview: 'Show preview',
+                showTips: 'Show tips',
+                width: 'Width',
+                height: 'Height',
+                lineWidth: 'Line width',
+                strokeColor: 'Stroke color',
+                backgroundColor: 'Background color'
+            },
+            event: {
+                clear: 'Triggered when cleared',
+                save: 'Triggered when saved'
+            }
+        },
+        Signature: {
+            clear: 'Clear',
+            save: 'Save',
+            placeholder: 'Sign here',
+            preview: 'Preview:',
+            tips: 'Use mouse or touch to sign above',
+            saveSuccess: 'Signature saved',
+            clearSuccess: 'Signature cleared'
         }
     },
 };

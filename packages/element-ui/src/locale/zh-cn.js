@@ -242,6 +242,24 @@ const ZhCn = {
             flat: '扁平',
             solid: '立体',
         },
+        background: {
+            name: '背景',
+            image: '背景图片',
+            url: '图片地址',
+            gradient: '渐变',
+            gradientStart: '起始颜色',
+            gradientEnd: '结束颜色',
+            repeat: '重复',
+            position: '位置',
+            size: '尺寸',
+            repeatAll: '重复',
+            repeatX: '水平重复',
+            repeatY: '垂直重复',
+            noRepeat: '不重复',
+            cover: '覆盖',
+            contain: '包含',
+            auto: '自动',
+        },
         font: {
             name: '文字',
             size: '大小',
@@ -940,6 +958,949 @@ const ZhCn = {
                 disabled: '是否禁用',
                 limit: '最大允许上传个数'
             }
+        },
+        fcDynamicRender: {
+            name: 'Vue组件',
+            info: '支持Vue单文件组件格式，包含template、script、style三个部分',
+            props: {
+                vueContent: '完整的Vue SFC代码内容',
+                formCreateInject: 'form-create注入的数据'
+            },
+            event: {
+                mounted: '组件挂载后触发',
+                error: '组件渲染错误时触发'
+            }
+        },
+        QrCodeBox: {
+            name: '二维码',
+            info: '生成二维码图片，用于编码信息展示',
+            props: {
+                value: '二维码内容',
+                size: '二维码尺寸(px)',
+                colorDark: '深色颜色',
+                colorLight: '浅色颜色',
+                correctLevel: '容错等级'
+            },
+            event: {
+                mounted: '组件挂载后触发'
+            }
+        },
+        BarCodeBox: {
+            name: '条形码',
+            info: '生成条形码，用于商品编码展示',
+            props: {
+                value: '条形码内容',
+                format: '条形码格式',
+                lineColor: '线条颜色',
+                width: '宽度',
+                height: '高度',
+                displayValue: '显示文本',
+                textAlign: '文本对齐'
+            },
+            event: {
+                mounted: '组件挂载后触发'
+            }
+        },
+        StepForm: {
+            name: '分步表单',
+            info: '分步骤展示表单内容，引导用户分步填写',
+            props: {
+                activeStep: '当前步骤',
+                showSteps: '显示步骤条',
+                simple: '简洁模式',
+                finishBtnText: '完成按钮文字',
+                validateOnChange: '变更时验证'
+            },
+            event: {
+                'step-change': '步骤切换时触发',
+                finish: '表单完成时触发'
+            }
+        },
+        IframeBox: {
+            name: '内嵌页面',
+            info: '在表单中嵌入外部网页内容',
+            props: {
+                src: '页面地址',
+                width: '宽度',
+                height: '高度',
+                loading: '显示加载状态',
+                showLoading: '显示加载动画',
+                allowFullscreen: '允许全屏'
+            },
+            event: {
+                load: '页面加载完成时触发',
+                error: '页面加载失败时触发',
+                mounted: '组件挂载后触发'
+            }
+        },
+        StyleEditor: {
+            name: '样式编辑器',
+            info: '可视化编辑组件样式',
+            props: {
+                width: '宽度',
+                height: '高度',
+                color: '字体颜色',
+                backgroundColor: '背景颜色',
+                borderRadius: '圆角',
+                boxShadow: '阴影',
+                margin: '外边距',
+                padding: '内边距'
+            }
+        },
+        ConfigPanel: {
+            name: '配置面板',
+            info: '综合配置面板',
+            props: {
+                title: '标题',
+                field: '字段名',
+                defaultValue: '默认值',
+                placeholder: '占位符',
+                disabled: '禁用',
+                readOnly: '只读',
+                clearable: '可清除',
+                required: '必填',
+                validateType: '校验类型',
+                pattern: '正则表达式',
+                min: '最小值',
+                max: '最大值',
+                minLength: '最小长度',
+                maxLength: '最大长度'
+            }
+        },
+        ControlConfig: {
+            name: '联动配置',
+            info: '配置表单联动条件',
+            props: {
+                field: '字段',
+                operator: '运算符',
+                value: '值',
+                logic: '逻辑关系'
+            }
+        },
+        FcEcharts: {
+            name: '图表',
+            info: '使用ECharts展示数据可视化图表',
+            props: {
+                width: '宽度',
+                height: '高度',
+                theme: '主题',
+                loading: '加载状态',
+                autoResize: '自动调整大小',
+                options: '图表配置'
+            },
+            event: {
+                click: '点击数据点时触发',
+                legendselectchanged: '图例选择变化时触发',
+                datazoom: '缩放区域变化时触发',
+                finished: '渲染完成时触发',
+                mounted: '组件挂载后触发'
+            }
+        },
+        ApiKeyInput: {
+            name: 'API Key',
+            info: 'API Key 输入组件，支持验证功能',
+            props: {
+                placeholder: '占位符',
+                disabled: '禁用',
+                clearable: '可清除',
+                showPassword: '显示密码',
+                showValidation: '显示验证',
+                validationUrl: '验证接口',
+                validateField: '验证字段',
+                errorMsg: '错误提示'
+            },
+            event: {
+                validate: '验证 API Key 时触发',
+                'validation-success': '验证成功时触发',
+                'validation-fail': '验证失败时触发'
+            }
+        },
+        NestedForm: {
+            name: '嵌套表单',
+            info: '嵌套表单容器，支持多层级子表单',
+            props: {
+                title: '标题',
+                disabled: '禁用',
+                required: '必填',
+                min: '最小数量',
+                max: '最大数量',
+                showAdd: '显示添加按钮',
+                showDelete: '显示删除按钮',
+                sortable: '可排序',
+                expandable: '可展开',
+                addBtnText: '添加按钮文字',
+                showPagination: '显示分页',
+                pageSize: '每页数量'
+            },
+            event: {
+                add: '添加子项时触发',
+                remove: '删除子项时触发',
+                expand: '展开/收起子项时触发',
+                'page-change': '页码变化时触发'
+            }
+        },
+        PrintForm: {
+            name: '打印表单',
+            info: '打印友好的表单渲染器，支持打印和预览功能',
+            props: {
+                title: '标题',
+                subtitle: '副标题',
+                disabled: '禁用',
+                showHeader: '显示头部',
+                showFooter: '显示底部',
+                showActions: '显示操作按钮',
+                showPrintTime: '显示打印时间',
+                showPage: '显示页码',
+                paperSize: '纸张大小',
+                orientation: '方向',
+                margin: '边距',
+                printUrl: '打印服务地址'
+            },
+            event: {
+                print: '点击打印时触发',
+                preview: '打开预览时触发'
+            }
+        },
+        FcFlow: {
+            name: '流程图',
+            info: '使用 Mermaid 展示流程图和图表',
+            props: {
+                title: '标题',
+                disabled: '禁用',
+                editable: '可编辑',
+                showHeader: '显示头部',
+                loading: '加载中',
+                diagramType: '图表类型',
+                direction: '方向',
+                theme: '主题',
+                height: '高度'
+            },
+            event: {
+                click: '点击节点时触发',
+                rendered: '图表渲染完成时触发'
+            }
+        },
+        fcFlow: {
+            loading: '正在加载图表...',
+            renderError: '图表渲染失败',
+            editDiagram: '编辑图表',
+            preview: '预览'
+        },
+        FcMarkdown: {
+            name: 'Markdown',
+            info: '展示和编辑 Markdown 内容',
+            props: {
+                title: '标题',
+                disabled: '禁用',
+                editable: '可编辑',
+                showHeader: '显示头部',
+                showFooter: '显示底部',
+                showToolbar: '显示工具栏',
+                editorRows: '编辑器行数'
+            },
+            event: {
+                change: '内容变化时触发',
+                rendered: 'Markdown 渲染完成时触发',
+                copy: '内容复制时触发'
+            }
+        },
+        fcMarkdown: {
+            words: '字数',
+            readTime: '阅读时间',
+            minutes: '分钟'
+        },
+        InfiniteForm: {
+            name: '无限表单',
+            info: '用于大数据集的虚拟滚动表单',
+            props: {
+                title: '标题',
+                disabled: '禁用',
+                multiple: '多选',
+                showHeader: '显示头部',
+                showFooter: '显示底部',
+                showActions: '显示操作按钮',
+                showInfo: '显示信息',
+                remoteLoad: '远程加载',
+                loadUrl: '加载地址',
+                pageSize: '每页数量',
+                itemHeight: '项高度',
+                itemKey: '项键字段',
+                itemTitle: '项标题字段'
+            },
+            event: {
+                change: '选择变化时触发',
+                load: '数据加载时触发',
+                select: '选择项时触发',
+                confirm: '点击确认按钮时触发',
+                scroll: '滚动时触发'
+            }
+        },
+        infiniteForm: {
+            total: '总计',
+            loaded: '已加载',
+            loading: '加载中...',
+            finished: '没有更多数据',
+            loadMore: '加载更多'
+        },
+        DataTable: {
+            name: '数据表格',
+            info: '高级数据表格，支持排序、筛选、分页',
+            props: {
+                title: '标题',
+                disabled: '禁用',
+                showActions: '显示操作',
+                showSelection: '显示选择',
+                showIndex: '显示序号',
+                showExport: '显示导出',
+                showPagination: '显示分页',
+                stripe: '斑马纹',
+                border: '边框',
+                size: '尺寸',
+                remoteData: '远程数据',
+                remoteUrl: '远程地址',
+                pageSize: '每页数量'
+            },
+            event: {
+                'selection-change': '选择变化时触发',
+                'row-click': '点击行时触发',
+                'cell-click': '点击单元格时触发',
+                'sort-change': '排序变化时触发',
+                'filter-change': '筛选变化时触发',
+                edit: '点击编辑按钮时触发',
+                delete: '点击删除按钮时触发',
+                refresh: '点击刷新时触发',
+                export: '点击导出时触发'
+            }
+        },
+        dataTable: {
+            operations: '操作',
+            columnConfig: '列配置'
+        },
+        VideoBox: {
+            name: '视频',
+            info: '视频播放器组件',
+            props: {
+                title: '标题',
+                src: '视频地址',
+                poster: '封面地址',
+                disabled: '禁用',
+                controls: '显示控制条',
+                autoplay: '自动播放',
+                loop: '循环',
+                muted: '静音',
+                showHeader: '显示头部',
+                showCustomControls: '自定义控制',
+                height: '高度'
+            },
+            event: {
+                play: '视频播放时触发',
+                pause: '视频暂停时触发',
+                ended: '视频结束时触发',
+                timeupdate: '时间更新时触发',
+                error: '发生错误时触发'
+            }
+        },
+        videoBox: {
+            notSupported: '您的浏览器不支持 video 标签',
+            noVideo: '暂无视频',
+            selectVideo: '选择视频'
+        },
+        AudioBox: {
+            name: '音频',
+            info: '音频播放器组件',
+            props: {
+                title: '标题',
+                src: '音频地址',
+                trackName: '曲目名称',
+                artist: '艺术家',
+                artwork: '封面地址',
+                disabled: '禁用',
+                autoplay: '自动播放',
+                loop: '循环',
+                showHeader: '显示头部',
+                showAlbumArt: '显示封面',
+                showRateControl: '显示倍速控制'
+            },
+            event: {
+                play: '音频播放时触发',
+                pause: '音频暂停时触发',
+                ended: '音频结束时触发',
+                timeupdate: '时间更新时触发',
+                error: '发生错误时触发'
+            }
+        },
+        audioBox: {
+            notSupported: '您的浏览器不支持 audio 标签',
+            noAudio: '暂无音频',
+            selectAudio: '选择音频',
+            unknownTrack: '未知曲目'
+        },
+        FcCity: {
+            name: '城市选择',
+            info: '中国城市/地区级联选择器',
+            props: {
+                title: '标题',
+                disabled: '禁用',
+                clearable: '可清除',
+                filterable: '可搜索',
+                showAllLevels: '显示完整路径',
+                areaCode: '返回区域代码',
+                level: '级别',
+                size: '尺寸',
+                dataType: '数据类型'
+            },
+            event: {
+                change: '选择变化时触发',
+                'expand-change': '面板展开时触发',
+                blur: '失去焦点时触发',
+                focus: '获得焦点时触发',
+                'visible-change': '可见性变化时触发'
+            }
+        },
+        FcAiPanel: {
+            name: 'AI 助手',
+            info: 'AI 驱动的聊天助手，用于生成表单',
+            props: {
+                title: '标题',
+                disabled: '禁用',
+                showHeader: '显示头部',
+                apiKey: 'API 密钥',
+                apiUrl: 'API 地址',
+                model: '模型',
+                maxLength: '最大长度'
+            },
+            event: {
+                send: '发送消息时触发',
+                clear: '清空历史时触发',
+                'generate-form': '生成表单时触发'
+            }
+        },
+        imageBox: {
+            noImage: '暂无图片',
+            selectImage: '选择图片',
+            loading: '加载中...',
+            error: '图片加载失败'
+        },
+        ImageBox: {
+            name: '图片',
+            info: '图片展示和上传组件',
+            props: {
+                title: '标题',
+                src: '图片地址',
+                alt: '替代文本',
+                caption: '描述',
+                fit: '填充模式',
+                disabled: '禁用',
+                lazy: '懒加载',
+                showHeader: '显示头部',
+                editable: '可编辑',
+                deletable: '可删除',
+                uploadable: '可上传',
+                height: '高度'
+            },
+            event: {
+                load: '图片加载完成时触发',
+                error: '发生错误时触发',
+                click: '点击时触发',
+                preview: '打开预览时触发',
+                change: '图片变化时触发'
+            }
+        },
+        DynamicComponent: {
+            name: '动态组件',
+            info: '动态加载和渲染 Vue 组件',
+            props: {
+                title: '标题',
+                disabled: '禁用',
+                componentName: '组件名称',
+                lazy: '懒加载'
+            },
+            event: {
+                ready: '组件加载完成时触发',
+                error: '加载错误时触发',
+                mounted: '组件挂载时触发'
+            }
+        },
+        ToolsBar: {
+            name: '工具栏',
+            info: '包含按钮、下拉菜单和搜索的工具栏',
+            props: {
+                title: '标题',
+                showMore: '显示更多菜单',
+                moreThreshold: '更多阈值'
+            },
+            event: {
+                click: '点击按钮时触发',
+                command: '选择下拉项时触发',
+                search: '执行搜索时触发',
+                input: '输入变化时触发'
+            }
+        },
+        globalVariableConfig: {
+            add: '添加变量',
+            name: '名称',
+            value: '值',
+            description: '描述',
+            scope: '作用域',
+            actions: '操作',
+            namePlaceholder: '变量名',
+            valuePlaceholder: '变量值',
+            descriptionPlaceholder: '描述（可选）',
+            tips: '全局变量可在表单规则中使用 ${变量名} 引用',
+            system: '系统'
+        },
+        GlobalVariableConfig: {
+            name: '全局变量',
+            info: '配置表单规则中使用的全局变量'
+        },
+        globalClassConfig: {
+            add: '添加样式',
+            namePlaceholder: '类名',
+            contentPlaceholder: 'CSS 规则',
+            preview: '预览',
+            previewText: '预览文字',
+            empty: '未定义自定义 CSS 类'
+        },
+        GlobalClassConfig: {
+            name: '全局 CSS 类',
+            info: '为表单组件定义自定义 CSS 类'
+        },
+        globalFetchConfig: {
+            add: '添加接口',
+            namePlaceholder: '接口名称',
+            url: '地址',
+            method: '方式',
+            headers: '请求头',
+            urlPlaceholder: 'API 接口地址',
+            headersPlaceholder: 'JSON 格式的请求头',
+            test: '测试',
+            result: '结果',
+            empty: '未配置全局 API 接口'
+        },
+        GlobalFetchConfig: {
+            name: '全局 API 接口',
+            info: '配置全局 API 接口用于数据获取'
+        },
+        DataView: {
+            name: '数据视图',
+            info: '以多种视图模式展示数据（列表、卡片、统计）',
+            props: {
+                title: '标题',
+                disabled: '禁用',
+                showHeader: '显示头部',
+                showPagination: '显示分页',
+                refreshable: '可刷新',
+                viewMode: '视图模式',
+                remoteData: '远程数据',
+                remoteUrl: '远程地址',
+                pageSize: '每页数量'
+            },
+            event: {
+                click: '点击项时触发',
+                refresh: '点击刷新时触发',
+                change: '页码变化时触发',
+                error: '发生错误时触发'
+            }
+        },
+        dataView: {
+            loading: '加载中...',
+            loadError: '数据加载失败'
+        },
+        InfiniteTableForm: {
+            name: '无限表格表单',
+            info: '支持虚拟滚动和内联编辑的表格',
+            props: {
+                title: '标题',
+                disabled: '禁用',
+                addable: '可添加',
+                editable: '可编辑',
+                deletable: '可删除',
+                showSelection: '显示选择',
+                showIndex: '显示序号',
+                showPagination: '显示分页',
+                stripe: '斑马纹',
+                border: '边框',
+                height: '高度',
+                remoteData: '远程数据',
+                remoteUrl: '远程地址',
+                pageSize: '每页数量'
+            },
+            event: {
+                add: '添加行时触发',
+                edit: '点击编辑按钮时触发',
+                delete: '删除行时触发',
+                'selection-change': '选择变化时触发',
+                'cell-change': '单元格值变化时触发'
+            }
+        },
+        infiniteTableForm: {
+            add: '添加行',
+            actions: '操作'
+        },
+        NestedTableForm: {
+            name: '嵌套表格表单',
+            info: '支持展开子行的表格',
+            props: {
+                title: '标题',
+                disabled: '禁用',
+                addable: '可添加',
+                editable: '可编辑',
+                deletable: '可删除',
+                expandable: '可展开',
+                defaultExpandAll: '默认展开全部',
+                showSelection: '显示选择',
+                showIndex: '显示序号',
+                stripe: '斑马纹',
+                border: '边框',
+                height: '高度'
+            },
+            event: {
+                add: '添加行时触发',
+                edit: '点击编辑按钮时触发',
+                delete: '删除行时触发',
+                'add-child': '添加子行时触发',
+                'delete-child': '删除子行时触发',
+                'expand-change': '展开状态变化时触发',
+                'selection-change': '选择变化时触发'
+            }
+        },
+        nestedTableForm: {
+            add: '添加',
+            addChild: '添加子项',
+            actions: '操作',
+            expandAll: '全部展开',
+            collapseAll: '全部收起'
+        },
+        AiChat: {
+            name: 'AI 对话',
+            info: 'AI 聊天界面，用于与 AI 助手交互',
+            props: {
+                title: '标题',
+                apiKey: 'API 密钥',
+                model: '模型',
+                placeholder: '占位符',
+                disabled: '禁用',
+                showHistory: '显示历史',
+                showClear: '显示清空按钮',
+                maxMessages: '最大消息数',
+                temperature: '温度'
+            },
+            event: {
+                send: '发送消息时触发',
+                error: '发生错误时触发'
+            }
+        },
+        aiChat: {
+            placeholder: '向 AI 提问...',
+            send: '发送',
+            clear: '清空对话',
+            thinking: 'AI 正在思考...',
+            error: '获取响应失败',
+            noApiKey: '请先配置 API 密钥'
+        },
+        Dataset: {
+            name: '数据集',
+            info: '数据集管理组件，支持导入导出功能',
+            props: {
+                title: '标题',
+                disabled: '禁用',
+                showImport: '显示导入',
+                showExport: '显示导出',
+                showRefresh: '显示刷新',
+                showClear: '显示清空',
+                showPagination: '显示分页',
+                importUrl: '导入地址',
+                exportUrl: '导出地址',
+                pageSize: '每页数量'
+            },
+            event: {
+                import: '导入完成时触发',
+                export: '请求导出时触发',
+                refresh: '点击刷新时触发',
+                clear: '点击清空时触发'
+            }
+        },
+        dataset: {
+            import: '导入',
+            export: '导出',
+            refresh: '刷新',
+            clear: '清空',
+            importSuccess: '导入成功',
+            importError: '导入失败',
+            exportSuccess: '导出成功',
+            clearConfirm: '确定要清空所有数据吗？',
+            noData: '暂无数据'
+        },
+        AiTool: {
+            name: 'AI 工具',
+            info: 'AI 配置和快捷操作工具',
+            props: {
+                apiKey: 'API 密钥',
+                model: '模型',
+                temperature: '温度',
+                maxTokens: '最大令牌数',
+                systemPrompt: '系统提示词',
+                enabledTools: '启用的工具'
+            },
+            event: {
+                execute: '执行快捷操作时触发',
+                save: '保存配置时触发',
+                test: '测试 API 密钥时触发'
+            }
+        },
+        aiTool: {
+            statusValid: '有效',
+            statusInvalid: '无效',
+            apiKey: 'API 密钥',
+            apiKeyPlaceholder: '请输入 API 密钥',
+            testKey: '测试密钥',
+            model: '模型',
+            temperature: '温度',
+            maxTokens: '最大令牌数',
+            systemPrompt: '系统提示词',
+            systemPromptPlaceholder: '请输入 AI 的系统提示词',
+            quickActions: '快捷操作',
+            tools: '工具',
+            toolGenerateForm: '生成表单',
+            toolGenerateRule: '生成规则',
+            toolOptimizePrompt: '优化提示词',
+            toolTranslate: '翻译',
+            toolExplainField: '解释字段',
+            actionGenerateForm: '生成表单',
+            actionOptimize: '优化',
+            actionTranslate: '翻译',
+            actionExplain: '解释',
+            saveConfig: '保存',
+            resetConfig: '重置',
+            configSaved: '配置已保存'
+        },
+        GlobalEventConfig: {
+            name: '全局事件配置',
+            info: '配置全局事件和动作',
+            props: {
+                events: '事件列表'
+            },
+            event: {
+                change: '配置变化时触发'
+            }
+        },
+        globalEventConfig: {
+            title: '全局事件配置',
+            addEvent: '添加事件',
+            event: '事件',
+            eventName: '事件名称',
+            eventNamePlaceholder: '请输入事件名称',
+            triggerType: '触发类型',
+            intervalMs: '间隔时间(ms)',
+            targetFields: '目标字段',
+            targetsPlaceholder: '选择目标字段',
+            condition: '触发条件',
+            conditionPlaceholder: '输入条件表达式',
+            actions: '执行动作',
+            actionValuePlaceholder: '输入动作值',
+            addAction: '添加动作',
+            noEvents: '暂无事件配置'
+        },
+        MStepForm: {
+            name: '多步表单',
+            info: '带进度跟踪的多步表单',
+            props: {
+                title: '标题',
+                disabled: '禁用',
+                showActions: '显示操作按钮',
+                showProgress: '显示进度'
+            },
+            event: {
+                'step-change': '步骤变化时触发',
+                submit: '表单提交时触发',
+                change: '字段值变化时触发'
+            }
+        },
+        mStepForm: {
+            prev: '上一步',
+            next: '下一步',
+            submit: '提交',
+            emptyStep: '该步骤没有字段',
+            stepProgress: '第 {current} 步，共 {total} 步',
+            submitSuccess: '表单提交成功',
+            fieldRequired: '{field} 为必填项'
+        },
+        InfiniteTableFormView: {
+            name: '无限表格表单(预览)',
+            info: '无限表格表单的预览模式',
+            props: {
+                title: '标题',
+                showIndex: '显示序号',
+                showSelection: '显示选择',
+                showActions: '显示操作',
+                showPagination: '显示分页',
+                height: '高度',
+                pageSize: '每页数量'
+            },
+            event: {
+                add: '点击添加时触发',
+                edit: '点击编辑时触发',
+                delete: '点击删除时触发',
+                refresh: '点击刷新时触发',
+                change: '数据变化时触发'
+            }
+        },
+        infiniteTableFormView: {
+            title: '数据预览',
+            index: '#',
+            actions: '操作',
+            addRow: '添加行',
+            dataCount: '显示 {visible} / 共 {total} 条',
+            rowAdded: '已添加行',
+            rowDeleted: '已删除行'
+        },
+        NestedTableFormView: {
+            name: '嵌套表格表单(预览)',
+            info: '嵌套表格表单的预览模式',
+            props: {
+                title: '标题',
+                showIndex: '显示序号',
+                showActions: '显示操作',
+                rowKey: '行标识',
+                displayField: '显示字段'
+            },
+            event: {
+                add: '点击添加时触发',
+                edit: '点击编辑时触发',
+                delete: '点击删除时触发',
+                'add-child': '添加子项时触发',
+                'delete-child': '删除子项时触发',
+                change: '数据变化时触发'
+            }
+        },
+        nestedTableFormView: {
+            title: '嵌套数据预览',
+            index: '#',
+            actions: '操作',
+            children: '{name} 的子项',
+            addRoot: '添加根节点',
+            addChild: '添加子节点',
+            noChildren: '暂无子项',
+            expandAll: '全部展开',
+            collapseAll: '全部收起',
+            dataCount: '共 {total} 条',
+            rowAdded: '已添加根节点',
+            childAdded: '已添加子节点',
+            rowDeleted: '已删除节点',
+            childDeleted: '已删除子节点'
+        },
+        FcMermaid: {
+            name: 'Mermaid 图表',
+            info: '使用 Mermaid 显示图表和流程图',
+            props: {
+                title: '标题',
+                disabled: '禁用',
+                showHeader: '显示头部',
+                diagramType: '图表类型',
+                direction: '方向',
+                theme: '主题',
+                height: '高度'
+            },
+            event: {
+                rendered: '图表渲染完成时触发',
+                error: '发生错误时触发',
+                edit: '点击编辑按钮时触发'
+            }
+        },
+        fcMermaid: {
+            renderSuccess: '图表渲染成功',
+            renderError: '图表渲染失败',
+            exportSuccess: '图表导出成功'
+        },
+        FcTdtMapPicker: {
+            name: '地图选点',
+            info: '在 TDT 地图上选择位置',
+            props: {
+                title: '标题',
+                disabled: '禁用',
+                showHeader: '显示头部',
+                showAddress: '显示地址',
+                showCoordinate: '显示坐标',
+                height: '高度',
+                ak: 'API 密钥',
+                center: '中心点',
+                zoom: '缩放级别',
+                markerDraggable: '标记可拖拽'
+            },
+            event: {
+                locate: '定位成功时触发',
+                error: '发生错误时触发'
+            }
+        },
+        fcTdtMapPicker: {
+            addressPlaceholder: '选择的地址',
+            latLng: '坐标',
+            addressCopied: '地址已复制到剪贴板',
+            locationFound: '定位成功',
+            locationFailed: '定位失败',
+            geolocationNotSupported: '不支持地理定位'
+        },
+        StepFormItem: {
+            name: '步骤项',
+            info: '带字段的步骤表单项',
+            props: {
+                label: '标签',
+                description: '描述',
+                fields: '字段',
+                isActive: '是否激活',
+                isCompleted: '是否完成',
+                showExpand: '显示展开',
+                showActions: '显示操作',
+                showPrev: '显示上一步',
+                showNext: '显示下一步',
+                showSubmit: '显示提交'
+            },
+            event: {
+                prev: '点击上一步时触发',
+                next: '点击下一步时触发',
+                submit: '点击提交时触发',
+                expand: '展开时触发',
+                collapse: '收起时触发'
+            }
+        },
+        stepFormItem: {
+            expand: '展开',
+            collapse: '收起',
+            prev: '上一步',
+            next: '下一步',
+            submit: '提交',
+            noFields: '该步骤没有字段',
+            fieldsCount: '{count} 个字段',
+            submitSuccess: '步骤提交成功'
+        },
+        Signature: {
+            name: '签名',
+            info: '数字签名组件',
+            props: {
+                title: '标题',
+                disabled: '禁用',
+                showHeader: '显示头部',
+                showPreview: '显示预览',
+                showTips: '显示提示',
+                width: '宽度',
+                height: '高度',
+                lineWidth: '线条宽度',
+                strokeColor: '线条颜色',
+                backgroundColor: '背景颜色'
+            },
+            event: {
+                clear: '清空时触发',
+                save: '保存时触发'
+            }
+        },
+        Signature: {
+            clear: '清空',
+            save: '保存',
+            placeholder: '在此签名',
+            preview: '预览：',
+            tips: '使用鼠标或触摸在上面签名',
+            saveSuccess: '签名已保存',
+            clearSuccess: '签名已清空'
         }
     },
 };

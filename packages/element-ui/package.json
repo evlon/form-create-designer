@@ -64,6 +64,7 @@
         "html-webpack-plugin": "^4.3.0",
         "jsonlint-mod": "^1.7.6",
         "lint-staged": "^10.2.11",
+        "mermaid": "^10.9.5",
         "rimraf": "^3.0.2",
         "vite": "^3.1.4"
     },
@@ -86,9 +87,12 @@
         "@form-create/element-ui": "^3.2.33",
         "@form-create/utils": "^3.2.31",
         "codemirror": "^6.65.7",
+        "echarts": "^5.4.3",
         "element-plus": "^2.11.1",
         "js-beautify": "^1.15.1",
+        "jsbarcode": "^3.12.0",
         "marked": "^17.0.0",
+        "qrcode": "^1.5.3",
         "signature_pad": "^5.0.10",
         "vuedraggable": "4.1.0"
     }
