@@ -14,7 +14,7 @@ module.exports = {
             filename: 'index.html'
         }
     },
-    transpileDependencies: ['marked'],
+    transpileDependencies: ['marked', 'mermaid'],
     configureWebpack: {
         module: {
             rules: [

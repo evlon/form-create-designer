@@ -114,7 +114,7 @@ import is from '@form-create/utils/lib/type';
 import formCreate from '@form-create/element-ui';
 import ZhCn from "../src/locale/zh-cn";
 import En from "../src/locale/en";
-import arrowDown from "@element-plus/icons-vue/dist/es/arrow-down.mjs";
+import arrowDown from "@element-plus/icons-vue";
 import {copyTextToClipboard} from "../src/utils";
 import ConfigPanel from "./components/ConfigPanel.vue";
 
