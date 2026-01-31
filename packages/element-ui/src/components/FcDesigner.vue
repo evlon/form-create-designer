@@ -1515,7 +1515,7 @@ export default defineComponent({
                 data.customForm.isShow = true;
                 data.customForm.propsShow = config.props && methods.getConfig('showPropsForm') !== false;
                 data.customForm.key = uniqueId();
-                data.customForm.rule = data.customForm.propsShow ? config.props({t}) : [];
+                data.customForm.rule = data.customForm.propsShow ? config.props(_, {t}) : [];
                 data.customForm.options.formData = config.formData;
                 if (config.style) {
                     data.styleForm.value = config.style.formData || {};

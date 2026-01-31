@@ -683,6 +683,23 @@ const En = {
                 beforeRemove: 'Before remove callback',
             }
         },
+        signature: {
+            name: 'Signature',
+            info: 'Handwritten signature component, support saving signature as image',
+            props: {
+                modelValue: 'Signature image data',
+                penColor: 'Pen color',
+                backgroundColor: 'Background color',
+                disabled: 'Disabled',
+                showHeader: 'Show header',
+                exportSrc: 'Export image URL',
+                height: 'Height'
+            },
+            event: {
+                end: 'Triggered when signing ends',
+                clear: 'Triggered when signature is cleared'
+            }
+        },
         group: {
             name: 'Subform',
             info: 'Callback function before removing subform item, return false to prevent removal',
@@ -980,164 +997,10 @@ const En = {
                 correctLevel: 'Error correction level'
             },
             event: {
-                mounted: 'Triggered after component mount'
-            }
-        },
-        BarCodeBox: {
-            name: 'Barcode',
-            info: 'Generate barcode for product encoding',
-            props: {
-                value: 'Barcode content',
-                format: 'Barcode format',
-                lineColor: 'Line color',
-                width: 'Width',
-                height: 'Height',
-                displayValue: 'Display value',
-                textAlign: 'Text alignment'
+
             },
-            event: {
-                mounted: 'Triggered after component mount'
-            }
         },
-        StepForm: {
-            name: 'Step Form',
-            info: 'Display form content in steps, guide user to fill in step by step',
-            props: {
-                activeStep: 'Current step',
-                showSteps: 'Show step bar',
-                simple: 'Simple mode',
-                finishBtnText: 'Finish button text',
-                validateOnChange: 'Validate on change'
-            },
-            event: {
-                'step-change': 'Triggered when step changes',
-                finish: 'Triggered when form is finished'
-            }
-        },
-        IframeBox: {
-            name: 'Iframe',
-            info: 'Embed external web page content in the form',
-            props: {
-                src: 'Page URL',
-                width: 'Width',
-                height: 'Height',
-                loading: 'Show loading state',
-                showLoading: 'Show loading animation',
-                allowFullscreen: 'Allow fullscreen'
-            },
-            event: {
-                load: 'Triggered when page loads successfully',
-                error: 'Triggered when page fails to load',
-                mounted: 'Triggered after component mount'
-            }
-        },
-        StyleEditor: {
-            name: 'Style Editor',
-            info: 'Visual style editor',
-            props: {
-                width: 'Width',
-                height: 'Height',
-                color: 'Text color',
-                backgroundColor: 'Background color',
-                borderRadius: 'Border radius',
-                boxShadow: 'Shadow',
-                margin: 'Margin',
-                padding: 'Padding'
-            }
-        },
-        ConfigPanel: {
-            name: 'Config Panel',
-            info: 'Comprehensive configuration panel',
-            props: {
-                title: 'Title',
-                field: 'Field name',
-                defaultValue: 'Default value',
-                placeholder: 'Placeholder',
-                disabled: 'Disabled',
-                readOnly: 'Read only',
-                clearable: 'Clearable',
-                required: 'Required',
-                validateType: 'Validate type',
-                pattern: 'Regular expression',
-                min: 'Minimum',
-                max: 'Maximum',
-                minLength: 'Minimum length',
-                maxLength: 'Maximum length'
-            }
-        },
-        ControlConfig: {
-            name: 'Linkage Config',
-            info: 'Configure form linkage conditions',
-            props: {
-                field: 'Field',
-                operator: 'Operator',
-                value: 'Value',
-                logic: 'Logic relation'
-            }
-        },
-        FcEcharts: {
-            name: 'Chart',
-            info: 'Display data visualization charts using ECharts',
-            props: {
-                width: 'Width',
-                height: 'Height',
-                theme: 'Theme',
-                loading: 'Loading state',
-                autoResize: 'Auto resize',
-                options: 'Chart options'
-            },
-            event: {
-                click: 'Triggered when clicking on data point',
-                legendselectchanged: 'Triggered when legend selection changes',
-                datazoom: 'Triggered when zoom area changes',
-                finished: 'Triggered when rendering completes',
-                mounted: 'Triggered after component mount'
-            }
-        },
-        ApiKeyInput: {
-            name: 'API Key',
-            info: 'Input component for API keys with validation support',
-            props: {
-                placeholder: 'Placeholder',
-                disabled: 'Disabled',
-                clearable: 'Clearable',
-                showPassword: 'Show password',
-                showValidation: 'Show validation',
-                validationUrl: 'Validation URL',
-                validateField: 'Validation field',
-                errorMsg: 'Error message'
-            },
-            event: {
-                validate: 'Triggered when validating API key',
-                'validation-success': 'Triggered when validation succeeds',
-                'validation-fail': 'Triggered when validation fails'
-            }
-        },
-        NestedForm: {
-            name: 'Nested Form',
-            info: 'Nested form container that supports multiple levels of subforms',
-            props: {
-                title: 'Title',
-                disabled: 'Disabled',
-                required: 'Required',
-                min: 'Minimum items',
-                max: 'Maximum items',
-                showAdd: 'Show add button',
-                showDelete: 'Show delete button',
-                sortable: 'Sortable',
-                expandable: 'Expandable items',
-                addBtnText: 'Add button text',
-                showPagination: 'Show pagination',
-                pageSize: 'Page size'
-            },
-            event: {
-                add: 'Triggered when item is added',
-                remove: 'Triggered when item is removed',
-                expand: 'Triggered when item is expanded/collapsed',
-                'page-change': 'Triggered when page changes'
-            }
-        },
-        PrintForm: {
+        'print-form': {
             name: 'Print Form',
             info: 'Print-friendly form renderer with print and preview functionality',
             props: {
@@ -1155,57 +1018,8 @@ const En = {
                 printUrl: 'Print service URL'
             },
             event: {
-                print: 'Triggered when printing',
-                preview: 'Triggered when preview is opened'
+
             }
-        },
-        FcFlow: {
-            name: 'Flowchart',
-            info: 'Display flowcharts and diagrams using Mermaid',
-            props: {
-                title: 'Title',
-                disabled: 'Disabled',
-                editable: 'Editable',
-                showHeader: 'Show header',
-                loading: 'Loading',
-                diagramType: 'Diagram type',
-                direction: 'Direction',
-                theme: 'Theme',
-                height: 'Height'
-            },
-            event: {
-                click: 'Triggered when clicking on a node',
-                rendered: 'Triggered when diagram is rendered'
-            }
-        },
-        fcFlow: {
-            loading: 'Loading diagram...',
-            renderError: 'Failed to render diagram',
-            editDiagram: 'Edit Diagram',
-            preview: 'Preview'
-        },
-        FcMarkdown: {
-            name: 'Markdown',
-            info: 'Display and edit markdown content',
-            props: {
-                title: 'Title',
-                disabled: 'Disabled',
-                editable: 'Editable',
-                showHeader: 'Show header',
-                showFooter: 'Show footer',
-                showToolbar: 'Show toolbar',
-                editorRows: 'Editor rows'
-            },
-            event: {
-                change: 'Triggered when content changes',
-                rendered: 'Triggered when markdown is rendered',
-                copy: 'Triggered when content is copied'
-            }
-        },
-        fcMarkdown: {
-            words: 'Words',
-            readTime: 'Read time',
-            minutes: 'min'
         },
         InfiniteForm: {
             name: 'Infinite Form',
@@ -1787,6 +1601,24 @@ const En = {
             rowDeleted: 'Row deleted',
             childDeleted: 'Child row deleted'
         },
+        'fc-mermaid': {
+            name: 'Mermaid Chart',
+            info: 'Display charts and diagrams using Mermaid',
+            props: {
+                title: 'Title',
+                disabled: 'Disabled',
+                showHeader: 'Show header',
+                diagramType: 'Diagram type',
+                direction: 'Direction',
+                theme: 'Theme',
+                height: 'Height'
+            },
+            event: {
+                rendered: 'Triggered when diagram is rendered',
+                error: 'Triggered on error',
+                edit: 'Triggered when edit button is clicked'
+            }
+        },
         FcMermaid: {
             name: 'Mermaid Chart',
             info: 'Display charts and diagrams using Mermaid',
@@ -1899,6 +1731,401 @@ const En = {
             tips: 'Use mouse or touch to sign above',
             saveSuccess: 'Signature saved',
             clearSuccess: 'Signature cleared'
+        },
+        'audio-box': {
+            name: 'Audio',
+            info: 'Audio player component',
+            props: {
+                title: 'Title',
+                disabled: 'Disabled',
+                src: 'Audio URL',
+                trackName: 'Track name',
+                artist: 'Artist',
+                artwork: 'Artwork URL',
+                autoplay: 'Autoplay',
+                loop: 'Loop',
+                showHeader: 'Show header',
+                showAlbumArt: 'Show album art',
+                showRateControl: 'Show rate control'
+            },
+            event: {
+                play: 'Triggered when playing',
+                pause: 'Triggered when paused',
+                ended: 'Triggered when ended',
+                timeupdate: 'Triggered on time update',
+                error: 'Triggered on error'
+            }
+        },
+        'video-box': {
+            name: 'Video',
+            info: 'Video player component',
+            props: {
+                title: 'Title',
+                disabled: 'Disabled',
+                src: 'Video URL',
+                poster: 'Poster URL',
+                controls: 'Show controls',
+                autoplay: 'Autoplay',
+                loop: 'Loop',
+                muted: 'Muted',
+                showHeader: 'Show header',
+                showCustomControls: 'Show custom controls',
+                height: 'Height'
+            },
+            event: {
+                play: 'Triggered when playing',
+                pause: 'Triggered when paused',
+                ended: 'Triggered when ended',
+                timeupdate: 'Triggered on time update',
+                error: 'Triggered on error'
+            }
+        },
+        'image-box': {
+            name: 'Image',
+            info: 'Image display component',
+            props: {
+                title: 'Title',
+                disabled: 'Disabled',
+                src: 'Image URL',
+                alt: 'Alt text',
+                fit: 'Fit mode',
+                lazy: 'Lazy load',
+                editable: 'Editable',
+                deletable: 'Deletable',
+                height: 'Height'
+            },
+            event: {
+                load: 'Triggered when loaded',
+                error: 'Triggered on error',
+                click: 'Triggered when clicked',
+                change: 'Triggered on change'
+            }
+        },
+        'tools-bar': {
+            name: 'Tools Bar',
+            info: 'Tools bar component with various actions',
+            props: {
+                title: 'Title',
+                showMore: 'Show more menu',
+                moreThreshold: 'More threshold',
+                tools: 'Tools list'
+            },
+            event: {
+                click: 'Triggered when clicked',
+                command: 'Triggered on command',
+                search: 'Triggered on search',
+                input: 'Triggered on input'
+            }
+        },
+        'data-table': {
+            name: 'Data Table',
+            info: 'Data table with pagination, sorting and filtering',
+            props: {
+                title: 'Title',
+                showActions: 'Show actions',
+                showSelection: 'Show selection',
+                showIndex: 'Show index',
+                showExport: 'Show export',
+                showPagination: 'Show pagination',
+                stripe: 'Stripe',
+                border: 'Border',
+                size: 'Size',
+                pageSize: 'Page size'
+            },
+            event: {
+                'selection-change': 'Triggered when selection changes',
+                'row-click': 'Triggered when row is clicked',
+                'cell-click': 'Triggered when cell is clicked',
+                'sort-change': 'Triggered when sort changes',
+                edit: 'Triggered when editing',
+                delete: 'Triggered when deleting',
+                refresh: 'Triggered when refreshing',
+                export: 'Triggered when exporting'
+            }
+        },
+        'data-view': {
+            name: 'Data View',
+            info: 'Multi-view data display component',
+            props: {
+                title: 'Title',
+                showHeader: 'Show header',
+                showPagination: 'Show pagination',
+                refreshable: 'Refreshable',
+                viewMode: 'View mode',
+                pageSize: 'Page size'
+            },
+            event: {
+                click: 'Triggered when clicked',
+                refresh: 'Triggered when refreshing',
+                change: 'Triggered on change',
+                error: 'Triggered on error'
+            }
+        },
+        'ai-chat': {
+            name: 'AI Chat',
+            info: 'AI intelligent chat component',
+            props: {
+                title: 'Title',
+                name: 'Assistant name',
+                avatar: 'Avatar URL',
+                showHeader: 'Show header',
+                online: 'Online status',
+                typingDuration: 'Typing animation duration'
+            },
+            event: {
+                send: 'Triggered when sending message',
+                clear: 'Triggered when clearing chat',
+                settings: 'Triggered when opening settings'
+            }
+        },
+        'ai-tool': {
+            name: 'AI Tool',
+            info: 'AI configuration and quick tools component',
+            props: {
+                apiKey: 'API Key',
+                model: 'Model name',
+                temperature: 'Temperature',
+                maxTokens: 'Max tokens',
+                systemPrompt: 'System prompt',
+                enabledTools: 'Enabled tools'
+            },
+            event: {
+                execute: 'Triggered when executing tool',
+                save: 'Triggered when saving config',
+                test: 'Triggered when testing connection'
+            }
+        },
+        'fc-ai-panel': {
+            name: 'AI Panel',
+            info: 'Complete AI assistant panel component',
+            props: {
+                title: 'Title',
+                showHeader: 'Show header',
+                apiKey: 'API Key',
+                apiUrl: 'API URL',
+                model: 'Model name',
+                maxLength: 'Max length'
+            },
+            event: {
+                send: 'Triggered when sending message',
+                clear: 'Triggered when clearing chat',
+                'generate-form': 'Triggered when generating form'
+            }
+        },
+        'fc-flow': {
+            name: 'Flowchart',
+            info: 'Mermaid-based flowchart component',
+            props: {
+                title: 'Title',
+                editable: 'Editable',
+                showHeader: 'Show header',
+                loading: 'Loading',
+                diagramType: 'Diagram type',
+                direction: 'Direction',
+                theme: 'Theme',
+                height: 'Height',
+                modelValue: 'Diagram code'
+            },
+            event: {
+                click: 'Triggered when clicked',
+                rendered: 'Triggered when rendered'
+            }
+        },
+        'fc-markdown': {
+            name: 'Markdown',
+            info: 'Markdown editor and preview component',
+            props: {
+                title: 'Title',
+                editable: 'Editable',
+                showHeader: 'Show header',
+                showFooter: 'Show footer',
+                showToolbar: 'Show toolbar',
+                editorRows: 'Editor rows',
+                modelValue: 'Content'
+            },
+            event: {
+                change: 'Triggered when content changes',
+                rendered: 'Triggered when rendered',
+                copy: 'Triggered when copying'
+            }
+        },
+        'dynamic-component': {
+            name: 'Dynamic Component',
+            info: 'Dynamically render specified component',
+            props: {
+                title: 'Title',
+                disabled: 'Disabled',
+                componentName: 'Component name',
+                lazy: 'Lazy load'
+            },
+            event: {
+                ready: 'Triggered when component loads',
+                error: 'Triggered when component fails to load'
+            }
+        },
+        'api-key-input': {
+            name: 'API Key',
+            info: 'API Key input with validation support',
+            props: {
+                title: 'Title',
+                disabled: 'Disabled',
+                placeholder: 'Placeholder',
+                clearable: 'Clearable',
+                showPassword: 'Show password',
+                showValidation: 'Show validation',
+                validationUrl: 'Validation API URL',
+                validateField: 'Validation field name',
+                errorMsg: 'Error message'
+            },
+            event: {}
+        },
+        'infinite-form': {
+            name: 'Infinite Form',
+            info: 'Infinite scroll form component',
+            props: {
+                title: 'Title',
+                multiple: 'Multiple select',
+                showHeader: 'Show header',
+                showFooter: 'Show footer',
+                showActions: 'Show actions',
+                showInfo: 'Show info',
+                remoteLoad: 'Remote load',
+                pageSize: 'Page size',
+                itemHeight: 'Item height',
+                itemKey: 'Item key field',
+                itemTitle: 'Item title field'
+            },
+            event: {
+                change: 'Triggered on change',
+                load: 'Triggered on load',
+                select: 'Triggered on select',
+                confirm: 'Triggered on confirm',
+                scroll: 'Triggered on scroll'
+            }
+        },
+        'infinite-table-form': {
+            name: 'Infinite Table Form',
+            info: 'Infinite scroll table form component',
+            props: {
+                title: 'Title',
+                addable: 'Addable',
+                editable: 'Editable',
+                deletable: 'Deletable',
+                showSelection: 'Show selection',
+                showIndex: 'Show index',
+                showPagination: 'Show pagination',
+                stripe: 'Stripe',
+                border: 'Border',
+                height: 'Height',
+                pageSize: 'Page size'
+            },
+            event: {
+                add: 'Triggered when adding',
+                edit: 'Triggered when editing',
+                delete: 'Triggered when deleting',
+                'selection-change': 'Triggered when selection changes',
+                'cell-change': 'Triggered when cell changes'
+            }
+        },
+        'nested-form': {
+            name: 'Nested Form',
+            info: 'Nested form container with multi-level support',
+            props: {
+                title: 'Title',
+                disabled: 'Disabled',
+                required: 'Required',
+                min: 'Minimum count',
+                max: 'Maximum count',
+                showAdd: 'Show add button',
+                showDelete: 'Show delete button',
+                sortable: 'Sortable',
+                expandable: 'Expandable',
+                showPagination: 'Show pagination',
+                pageSize: 'Page size'
+            },
+            event: {
+                add: 'Triggered when adding subitem',
+                remove: 'Triggered when removing subitem',
+                expand: 'Triggered when expanding/collapsing',
+                'page-change': 'Triggered when page changes'
+            }
+        },
+        'nested-table-form': {
+            name: 'Nested Table Form',
+            info: 'Tree table form with multi-level data support',
+            props: {
+                title: 'Title',
+                addable: 'Addable',
+                editable: 'Editable',
+                deletable: 'Deletable',
+                expandable: 'Expandable',
+                defaultExpandAll: 'Expand all by default',
+                showSelection: 'Show selection',
+                showIndex: 'Show index',
+                stripe: 'Stripe',
+                border: 'Border',
+                height: 'Height'
+            },
+            event: {
+                add: 'Triggered when adding',
+                edit: 'Triggered when editing',
+                delete: 'Triggered when deleting',
+                'add-child': 'Triggered when adding child',
+                'delete-child': 'Triggered when deleting child',
+                'expand-change': 'Triggered when expand changes',
+                'selection-change': 'Triggered when selection changes'
+            }
+        },
+        'print-form': {
+            name: 'Print Form',
+            info: 'Print-friendly form renderer',
+            props: {
+                title: 'Title',
+                subtitle: 'Subtitle',
+                disabled: 'Disabled',
+                showHeader: 'Show header',
+                showFooter: 'Show footer',
+                showActions: 'Show actions',
+                showPrintTime: 'Show print time',
+                showPage: 'Show page',
+                paperSize: 'Paper size',
+                orientation: 'Orientation',
+                margin: 'Margin'
+            },
+            event: {}
+        },
+        'step-form-item': {
+            name: 'Step Item',
+            info: 'Step form item component',
+            props: {
+                label: 'Label',
+                description: 'Description',
+                fields: 'Fields',
+                isActive: 'Is active',
+                isCompleted: 'Is completed',
+                showExpand: 'Show expand',
+                showActions: 'Show actions',
+                showPrev: 'Show previous',
+                showNext: 'Show next',
+                showSubmit: 'Show submit'
+            },
+            event: {
+                prev: 'Triggered when clicking previous',
+                next: 'Triggered when clicking next',
+                submit: 'Triggered when clicking submit'
+            }
+        },
+        'm-step-form': {
+            name: 'Mobile Step Form',
+            info: 'Multi-step form for mobile devices',
+            props: {
+                steps: 'Steps configuration'
+            },
+            event: {
+                change: 'Triggered on change',
+                'step-change': 'Triggered when step changes',
+                submit: 'Triggered when submitting'
+            }
         }
     },
 };

@@ -1,5 +1,3 @@
-import { makeRequiredRule } from '../../utils'
-
 export default {
   icon: 'Connection',
   name: 'nested-table-form-view',

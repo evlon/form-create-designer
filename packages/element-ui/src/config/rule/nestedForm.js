@@ -1,4 +1,7 @@
+import {localeProps, makeRequiredRule} from '../../utils';
+
 export default {
+    menu: 'subform',
     icon: 'icon-group',
     name: 'nested-form',
     label: 'Nested Form',
@@ -6,115 +9,21 @@ export default {
     rules: [
         makeRequiredRule()
     ],
-    props: [
-        {
-            type: 'input',
-            field: 'field',
-            label: 'Field ID',
-            props: {
-                clearable: true
-            }
-        },
-        {
-            type: 'input',
-            field: 'title',
-            label: 'Title',
-            props: {
-                clearable: true
-            }
-        },
-        {
-            type: 'switch',
-            field: 'disabled',
-            label: 'Disabled',
-            props: {
-                clearable: true
-            }
-        },
-        {
-            type: 'switch',
-            field: 'required',
-            label: 'Required',
-            props: {
-                clearable: true
-            }
-        },
-        {
-            type: 'inputNumber',
-            field: 'min',
-            label: 'Min items',
-            props: {
-                min: 0,
-                clearable: true
-            }
-        },
-        {
-            type: 'inputNumber',
-            field: 'max',
-            label: 'Max items',
-            props: {
-                min: 0,
-                clearable: true
-            }
-        },
-        {
-            type: 'switch',
-            field: 'showAdd',
-            label: 'Show add button',
-            props: {
-                clearable: true
-            }
-        },
-        {
-            type: 'switch',
-            field: 'showDelete',
-            label: 'Show delete button',
-            props: {
-                clearable: true
-            }
-        },
-        {
-            type: 'switch',
-            field: 'sortable',
-            label: 'Sortable',
-            props: {
-                clearable: true
-            }
-        },
-        {
-            type: 'switch',
-            field: 'expandable',
-            label: 'Expandable',
-            props: {
-                clearable: true
-            }
-        },
-        {
-            type: 'switch',
-            field: 'showPagination',
-            label: 'Show pagination',
-            props: {
-                clearable: true
-            }
-        },
-        {
-            type: 'inputNumber',
-            field: 'pageSize',
-            label: 'Page size',
-            props: {
-                min: 1,
-                max: 100,
-                clearable: true
-            }
-        },
-        {
-            type: 'input',
-            field: 'addBtnText',
-            label: 'Add button text',
-            props: {
-                clearable: true,
-                placeholder: 'Custom add button text'
-            }
-        }
-    ]
+    props(_, {t}) {
+        return localeProps(t, 'nested-form.props', [
+            { type: 'input', field: 'field', label: 'Field ID' },
+            { type: 'input', field: 'title', label: '标题' },
+            { type: 'switch', field: 'disabled', label: '禁用' },
+            { type: 'switch', field: 'required', label: '必填' },
+            { type: 'inputNumber', field: 'min', label: '最小数量', props: { min: 0 } },
+            { type: 'inputNumber', field: 'max', label: '最大数量', props: { min: 0 } },
+            { type: 'switch', field: 'showAdd', label: '显示添加按钮' },
+            { type: 'switch', field: 'showDelete', label: '显示删除按钮' },
+            { type: 'switch', field: 'sortable', label: '可排序' },
+            { type: 'switch', field: 'expandable', label: '可展开' },
+            { type: 'switch', field: 'showPagination', label: '显示分页' },
+            { type: 'inputNumber', field: 'pageSize', label: '每页数量', props: { min: 1, max: 100 } },
+            { type: 'input', field: 'addBtnText', label: '添加按钮文本' },
+        ]);
+    }
 };

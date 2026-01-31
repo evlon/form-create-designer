@@ -1,19 +1,14 @@
-import { makeOptionsRule, makeRequiredRule, getInjectArg } from '../../utils';
+import {localeProps} from '../../utils';
 
 export default {
+    menu: 'aide',
     icon: 'icon-barcode',
     name: 'BarCodeBox',
-    title: '条形码',
-    columns: [
-        makeOptionsRule('props'),
-    ],
-    rules: [
-        makeRequiredRule('BarCodeBox'),
-    ],
-    getOptions(field, { t }) {
-        return [
-            { label: t('com.BarCodeBox.props.value'), value: 'text', type: 'textarea' },
-            { label: t('com.BarCodeBox.props.format'), value: 'format', type: 'select', options: [
+    label: '条形码',
+    props(_, {t}) {
+        return localeProps(t, 'BarCodeBox.props', [
+            { type: 'textarea', field: 'value', label: '值' },
+            { type: 'select', field: 'format', label: '格式', options: [
                 { label: 'CODE128', value: 'CODE128' },
                 { label: 'CODE39', value: 'CODE39' },
                 { label: 'EAN-13', value: 'EAN13' },
@@ -23,18 +18,18 @@ export default {
                 { label: 'pharmacode', value: 'pharmacode' },
                 { label: 'codabar', value: 'codabar' }
             ]},
-            { label: t('com.BarCodeBox.props.lineColor'), value: 'lineColor', type: 'color' },
-            { label: t('com.BarCodeBox.props.width'), value: 'width', type: 'number' },
-            { label: t('com.BarCodeBox.props.height'), value: 'height', type: 'number' },
-            { label: t('com.BarCodeBox.props.displayValue'), value: 'displayValue', type: 'switch' },
-            { label: t('com.BarCodeBox.props.textAlign'), value: 'textAlign', type: 'select', options: [
+            { type: 'color', field: 'lineColor', label: '线条颜色' },
+            { type: 'inputNumber', field: 'width', label: '宽度', props: { min: 50, max: 500 } },
+            { type: 'inputNumber', field: 'height', label: '高度', props: { min: 30, max: 300 } },
+            { type: 'switch', field: 'displayValue', label: '显示值' },
+            { type: 'select', field: 'textAlign', label: '文本对齐', options: [
                 { label: '左', value: 'left' },
                 { label: '中', value: 'center' },
                 { label: '右', value: 'right' }
             ]},
-        ];
+        ]);
     },
-    rule({ t }) {
+    rule({t}) {
         return {
             type: 'BarCodeBox',
             field: 'barcode_' + Date.now(),

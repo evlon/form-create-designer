@@ -1,22 +1,17 @@
-import { makeOptionsRule, makeRequiredRule, getInjectArg } from '../../utils';
+import {localeProps, getInjectArg} from '../../utils';
 
 export default {
+    menu: 'layout',
     icon: 'icon-editor',
     name: 'fcDynamicRender',
-    title: 'Vue组件',
-    columns: [
-        makeOptionsRule('props'),
-    ],
-    rules: [
-        makeRequiredRule('fcDynamicRender'),
-    ],
-    getOptions(field, { t }) {
-        return [
-            { label: t('com.fcDynamicRender.props.vueContent'), value: 'vueContent', type: 'textarea' },
-            { label: t('com.fcDynamicRender.props.formCreateInject'), value: 'formCreateInject', type: 'object' },
-        ];
+    label: 'Vue组件',
+    props(_, {t}) {
+        return localeProps(t, 'fcDynamicRender.props', [
+            { type: 'textarea', field: 'vueContent', label: '组件代码' },
+            { type: 'object', field: 'formCreateInject', label: '注入数据' },
+        ]);
     },
-    rule({ t }) {
+    rule({t}) {
         return {
             type: 'fcDynamicRender',
             field: 'vueComponent_' + Date.now(),
@@ -26,7 +21,7 @@ export default {
             readOnly: false,
             props: {
                 vueContent: '',
-                formCreateInject: getInjectArg()
+                formCreateInject: getInjectArg(t)
             },
             validate: [],
             on: {

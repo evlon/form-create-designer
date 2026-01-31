@@ -1,25 +1,20 @@
-import { makeOptionsRule, makeRequiredRule, getInjectArg } from '../../utils';
+import {localeProps} from '../../utils';
 
 export default {
+    menu: 'subform',
     icon: 'icon-step-form',
     name: 'StepForm',
-    title: '分步表单',
-    columns: [
-        makeOptionsRule('props'),
-    ],
-    rules: [
-        makeRequiredRule('StepForm'),
-    ],
-    getOptions(field, { t }) {
-        return [
-            { label: t('com.StepForm.props.activeStep'), value: 'activeStep', type: 'number' },
-            { label: t('com.StepForm.props.showSteps'), value: 'showSteps', type: 'switch' },
-            { label: t('com.StepForm.props.simple'), value: 'simple', type: 'switch' },
-            { label: t('com.StepForm.props.finishBtnText'), value: 'finishBtnText', type: 'text' },
-            { label: t('com.StepForm.props.validateOnChange'), value: 'validateOnChange', type: 'switch' },
-        ];
+    label: '分步表单',
+    props(_, {t}) {
+        return localeProps(t, 'StepForm.props', [
+            { type: 'inputNumber', field: 'activeStep', label: '当前步骤' },
+            { type: 'switch', field: 'showSteps', label: '显示步骤' },
+            { type: 'switch', field: 'simple', label: '简洁模式' },
+            { type: 'input', field: 'finishBtnText', label: '完成按钮文本' },
+            { type: 'switch', field: 'validateOnChange', label: '变化时校验' },
+        ]);
     },
-    rule({ t }) {
+    rule({t}) {
         return {
             type: 'StepForm',
             field: 'stepForm_' + Date.now(),

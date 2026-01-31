@@ -683,6 +683,23 @@ const ZhCn = {
                 beforeRemove: '删除前置回调',
             }
         },
+        signature: {
+            name: '签名',
+            info: '手写签名组件，支持保存签名为图片',
+            props: {
+                modelValue: '签名图片数据',
+                penColor: '画笔颜色',
+                backgroundColor: '背景颜色',
+                disabled: '禁用',
+                showHeader: '显示头部',
+                exportSrc: '导出图片地址',
+                height: '高度'
+            },
+            event: {
+                end: '签名完成时触发',
+                clear: '清除签名时触发'
+            }
+        },
         group: {
             name: '子表单',
             info: '删除子表单项前的回调函数,返回 false 可阻止删除操作',
@@ -982,164 +999,10 @@ const ZhCn = {
                 correctLevel: '容错等级'
             },
             event: {
-                mounted: '组件挂载后触发'
-            }
-        },
-        BarCodeBox: {
-            name: '条形码',
-            info: '生成条形码，用于商品编码展示',
-            props: {
-                value: '条形码内容',
-                format: '条形码格式',
-                lineColor: '线条颜色',
-                width: '宽度',
-                height: '高度',
-                displayValue: '显示文本',
-                textAlign: '文本对齐'
+
             },
-            event: {
-                mounted: '组件挂载后触发'
-            }
         },
-        StepForm: {
-            name: '分步表单',
-            info: '分步骤展示表单内容，引导用户分步填写',
-            props: {
-                activeStep: '当前步骤',
-                showSteps: '显示步骤条',
-                simple: '简洁模式',
-                finishBtnText: '完成按钮文字',
-                validateOnChange: '变更时验证'
-            },
-            event: {
-                'step-change': '步骤切换时触发',
-                finish: '表单完成时触发'
-            }
-        },
-        IframeBox: {
-            name: '内嵌页面',
-            info: '在表单中嵌入外部网页内容',
-            props: {
-                src: '页面地址',
-                width: '宽度',
-                height: '高度',
-                loading: '显示加载状态',
-                showLoading: '显示加载动画',
-                allowFullscreen: '允许全屏'
-            },
-            event: {
-                load: '页面加载完成时触发',
-                error: '页面加载失败时触发',
-                mounted: '组件挂载后触发'
-            }
-        },
-        StyleEditor: {
-            name: '样式编辑器',
-            info: '可视化编辑组件样式',
-            props: {
-                width: '宽度',
-                height: '高度',
-                color: '字体颜色',
-                backgroundColor: '背景颜色',
-                borderRadius: '圆角',
-                boxShadow: '阴影',
-                margin: '外边距',
-                padding: '内边距'
-            }
-        },
-        ConfigPanel: {
-            name: '配置面板',
-            info: '综合配置面板',
-            props: {
-                title: '标题',
-                field: '字段名',
-                defaultValue: '默认值',
-                placeholder: '占位符',
-                disabled: '禁用',
-                readOnly: '只读',
-                clearable: '可清除',
-                required: '必填',
-                validateType: '校验类型',
-                pattern: '正则表达式',
-                min: '最小值',
-                max: '最大值',
-                minLength: '最小长度',
-                maxLength: '最大长度'
-            }
-        },
-        ControlConfig: {
-            name: '联动配置',
-            info: '配置表单联动条件',
-            props: {
-                field: '字段',
-                operator: '运算符',
-                value: '值',
-                logic: '逻辑关系'
-            }
-        },
-        FcEcharts: {
-            name: '图表',
-            info: '使用ECharts展示数据可视化图表',
-            props: {
-                width: '宽度',
-                height: '高度',
-                theme: '主题',
-                loading: '加载状态',
-                autoResize: '自动调整大小',
-                options: '图表配置'
-            },
-            event: {
-                click: '点击数据点时触发',
-                legendselectchanged: '图例选择变化时触发',
-                datazoom: '缩放区域变化时触发',
-                finished: '渲染完成时触发',
-                mounted: '组件挂载后触发'
-            }
-        },
-        ApiKeyInput: {
-            name: 'API Key',
-            info: 'API Key 输入组件，支持验证功能',
-            props: {
-                placeholder: '占位符',
-                disabled: '禁用',
-                clearable: '可清除',
-                showPassword: '显示密码',
-                showValidation: '显示验证',
-                validationUrl: '验证接口',
-                validateField: '验证字段',
-                errorMsg: '错误提示'
-            },
-            event: {
-                validate: '验证 API Key 时触发',
-                'validation-success': '验证成功时触发',
-                'validation-fail': '验证失败时触发'
-            }
-        },
-        NestedForm: {
-            name: '嵌套表单',
-            info: '嵌套表单容器，支持多层级子表单',
-            props: {
-                title: '标题',
-                disabled: '禁用',
-                required: '必填',
-                min: '最小数量',
-                max: '最大数量',
-                showAdd: '显示添加按钮',
-                showDelete: '显示删除按钮',
-                sortable: '可排序',
-                expandable: '可展开',
-                addBtnText: '添加按钮文字',
-                showPagination: '显示分页',
-                pageSize: '每页数量'
-            },
-            event: {
-                add: '添加子项时触发',
-                remove: '删除子项时触发',
-                expand: '展开/收起子项时触发',
-                'page-change': '页码变化时触发'
-            }
-        },
-        PrintForm: {
+        'print-form': {
             name: '打印表单',
             info: '打印友好的表单渲染器，支持打印和预览功能',
             props: {
@@ -1157,57 +1020,8 @@ const ZhCn = {
                 printUrl: '打印服务地址'
             },
             event: {
-                print: '点击打印时触发',
-                preview: '打开预览时触发'
+
             }
-        },
-        FcFlow: {
-            name: '流程图',
-            info: '使用 Mermaid 展示流程图和图表',
-            props: {
-                title: '标题',
-                disabled: '禁用',
-                editable: '可编辑',
-                showHeader: '显示头部',
-                loading: '加载中',
-                diagramType: '图表类型',
-                direction: '方向',
-                theme: '主题',
-                height: '高度'
-            },
-            event: {
-                click: '点击节点时触发',
-                rendered: '图表渲染完成时触发'
-            }
-        },
-        fcFlow: {
-            loading: '正在加载图表...',
-            renderError: '图表渲染失败',
-            editDiagram: '编辑图表',
-            preview: '预览'
-        },
-        FcMarkdown: {
-            name: 'Markdown',
-            info: '展示和编辑 Markdown 内容',
-            props: {
-                title: '标题',
-                disabled: '禁用',
-                editable: '可编辑',
-                showHeader: '显示头部',
-                showFooter: '显示底部',
-                showToolbar: '显示工具栏',
-                editorRows: '编辑器行数'
-            },
-            event: {
-                change: '内容变化时触发',
-                rendered: 'Markdown 渲染完成时触发',
-                copy: '内容复制时触发'
-            }
-        },
-        fcMarkdown: {
-            words: '字数',
-            readTime: '阅读时间',
-            minutes: '分钟'
         },
         InfiniteForm: {
             name: '无限表单',
@@ -1789,6 +1603,24 @@ const ZhCn = {
             rowDeleted: '已删除节点',
             childDeleted: '已删除子节点'
         },
+        'fc-mermaid': {
+            name: 'Mermaid 图表',
+            info: '使用 Mermaid 显示图表和流程图',
+            props: {
+                title: '标题',
+                disabled: '禁用',
+                showHeader: '显示头部',
+                diagramType: '图表类型',
+                direction: '方向',
+                theme: '主题',
+                height: '高度'
+            },
+            event: {
+                rendered: '图表渲染完成时触发',
+                error: '发生错误时触发',
+                edit: '点击编辑按钮时触发'
+            }
+        },
         FcMermaid: {
             name: 'Mermaid 图表',
             info: '使用 Mermaid 显示图表和流程图',
@@ -1901,6 +1733,409 @@ const ZhCn = {
             tips: '使用鼠标或触摸在上面签名',
             saveSuccess: '签名已保存',
             clearSuccess: '签名已清空'
+        },
+        'audio-box': {
+            name: '音频',
+            info: '音频播放器组件',
+            props: {
+                title: '标题',
+                disabled: '禁用',
+                src: '音频地址',
+                trackName: '曲目名称',
+                artist: '艺术家',
+                artwork: '封面地址',
+                autoplay: '自动播放',
+                loop: '循环播放',
+                showHeader: '显示头部',
+                showAlbumArt: '显示封面',
+                showRateControl: '显示速度控制'
+            },
+            event: {
+                play: '播放时触发',
+                pause: '暂停时触发',
+                ended: '播放结束时触发',
+                timeupdate: '时间更新时触发',
+                error: '发生错误时触发'
+            }
+        },
+        'video-box': {
+            name: '视频',
+            info: '视频播放器组件',
+            props: {
+                title: '标题',
+                disabled: '禁用',
+                src: '视频地址',
+                poster: '封面地址',
+                controls: '显示控件',
+                autoplay: '自动播放',
+                loop: '循环播放',
+                muted: '静音',
+                showHeader: '显示头部',
+                showCustomControls: '显示自定义控件',
+                height: '高度'
+            },
+            event: {
+                play: '播放时触发',
+                pause: '暂停时触发',
+                ended: '播放结束时触发',
+                timeupdate: '时间更新时触发',
+                error: '发生错误时触发'
+            }
+        },
+        'image-box': {
+            name: '图片',
+            info: '图片展示组件',
+            props: {
+                title: '标题',
+                disabled: '禁用',
+                src: '图片地址',
+                alt: '替代文本',
+                fit: '填充模式',
+                lazy: '懒加载',
+                editable: '可编辑',
+                deletable: '可删除',
+                height: '高度'
+            },
+            event: {
+                load: '加载完成时触发',
+                error: '加载失败时触发',
+                click: '点击时触发',
+                change: '变化时触发'
+            }
+        },
+        'tools-bar': {
+            name: '工具栏',
+            info: '工具栏组件，支持多种操作按钮',
+            props: {
+                title: '标题',
+                showMore: '显示更多菜单',
+                moreThreshold: '更多阈值',
+                tools: '工具列表'
+            },
+            event: {
+                click: '点击时触发',
+                command: '命令执行时触发',
+                search: '搜索时触发',
+                input: '输入时触发'
+            }
+        },
+        'data-table': {
+            name: '数据表格',
+            info: '数据表格组件，支持分页、排序、筛选',
+            props: {
+                title: '标题',
+                showActions: '显示操作列',
+                showSelection: '显示选择列',
+                showIndex: '显示序号列',
+                showExport: '显示导出按钮',
+                showPagination: '显示分页',
+                stripe: '斑马纹',
+                border: '边框',
+                size: '尺寸',
+                pageSize: '每页数量'
+            },
+            event: {
+                'selection-change': '选择变化时触发',
+                'row-click': '行点击时触发',
+                'cell-click': '单元格点击时触发',
+                'sort-change': '排序变化时触发',
+                edit: '编辑时触发',
+                delete: '删除时触发',
+                refresh: '刷新时触发',
+                export: '导出时触发'
+            }
+        },
+        'data-view': {
+            name: '数据视图',
+            info: '数据多视图展示组件',
+            props: {
+                title: '标题',
+                showHeader: '显示头部',
+                showPagination: '显示分页',
+                refreshable: '可刷新',
+                viewMode: '视图模式',
+                pageSize: '每页数量'
+            },
+            event: {
+                click: '点击时触发',
+                refresh: '刷新时触发',
+                change: '变化时触发',
+                error: '发生错误时触发'
+            }
+        },
+        'ai-chat': {
+            name: 'AI对话',
+            info: 'AI智能对话组件',
+            props: {
+                title: '标题',
+                name: '助手名称',
+                avatar: '头像地址',
+                showHeader: '显示头部',
+                online: '在线状态',
+                typingDuration: '打字动画时长'
+            },
+            event: {
+                send: '发送消息时触发',
+                clear: '清空对话时触发',
+                settings: '打开设置时触发'
+            }
+        },
+        'ai-tool': {
+            name: 'AI工具',
+            info: 'AI配置和快捷工具组件',
+            props: {
+                apiKey: 'API密钥',
+                model: '模型名称',
+                temperature: '温度参数',
+                maxTokens: '最大token数',
+                systemPrompt: '系统提示词',
+                enabledTools: '启用的工具'
+            },
+            event: {
+                execute: '执行工具时触发',
+                save: '保存配置时触发',
+                test: '测试连接时触发'
+            }
+        },
+        'fc-ai-panel': {
+            name: 'AI助手面板',
+            info: 'AI助手完整面板组件',
+            props: {
+                title: '标题',
+                showHeader: '显示头部',
+                apiKey: 'API密钥',
+                apiUrl: 'API地址',
+                model: '模型名称',
+                maxLength: '最大长度'
+            },
+            event: {
+                send: '发送消息时触发',
+                clear: '清空对话时触发',
+                'generate-form': '生成表单时触发'
+            }
+        },
+        'fc-flow': {
+            name: '流程图',
+            info: '基于 Mermaid 的流程图组件',
+            props: {
+                title: '标题',
+                editable: '可编辑',
+                showHeader: '显示头部',
+                loading: '加载状态',
+                diagramType: '图表类型',
+                direction: '方向',
+                theme: '主题',
+                height: '高度',
+                modelValue: '图表代码'
+            },
+            event: {
+                click: '点击时触发',
+                rendered: '渲染完成时触发'
+            }
+        },
+        'fc-markdown': {
+            name: 'Markdown',
+            info: 'Markdown 编辑器和预览组件',
+            props: {
+                title: '标题',
+                editable: '可编辑',
+                showHeader: '显示头部',
+                showFooter: '显示底部',
+                showToolbar: '显示工具栏',
+                editorRows: '编辑器行数',
+                modelValue: '内容'
+            },
+            event: {
+                change: '内容变化时触发',
+                rendered: '渲染完成时触发',
+                copy: '复制时触发'
+            }
+        },
+        'dynamic-component': {
+            name: '动态组件',
+            info: '动态渲染指定组件',
+            props: {
+                title: '标题',
+                disabled: '禁用',
+                componentName: '组件名称',
+                lazy: '懒加载'
+            },
+            event: {
+                ready: '组件加载完成时触发',
+                error: '组件加载失败时触发'
+            }
+        },
+        'api-key-input': {
+            name: 'API Key',
+            info: 'API密钥输入组件，支持验证',
+            props: {
+                title: '标题',
+                disabled: '禁用',
+                placeholder: '占位符',
+                clearable: '可清除',
+                showPassword: '显示密码',
+                showValidation: '显示验证',
+                validationUrl: '验证接口地址',
+                validateField: '验证字段名',
+                errorMsg: '错误提示'
+            },
+            event: {}
+        },
+        'tools-bar': {
+            name: '工具栏',
+            info: '工具栏组件'
+        },
+        'video-box': {
+            name: '视频',
+            info: '视频播放器组件'
+        },
+        'infinite-form': {
+            name: '无限表单',
+            info: '无限滚动表单组件',
+            props: {
+                title: '标题',
+                multiple: '多选模式',
+                showHeader: '显示头部',
+                showFooter: '显示底部',
+                showActions: '显示操作',
+                showInfo: '显示信息',
+                remoteLoad: '远程加载',
+                pageSize: '每页数量',
+                itemHeight: '项高度',
+                itemKey: '项键字段',
+                itemTitle: '项标题字段'
+            },
+            event: {
+                change: '变化时触发',
+                load: '加载时触发',
+                select: '选择时触发',
+                confirm: '确认时触发',
+                scroll: '滚动时触发'
+            }
+        },
+        'infinite-table-form': {
+            name: '无限表格表单',
+            info: '无限滚动的表格表单组件',
+            props: {
+                title: '标题',
+                addable: '可添加',
+                editable: '可编辑',
+                deletable: '可删除',
+                showSelection: '显示选择',
+                showIndex: '显示序号',
+                showPagination: '显示分页',
+                stripe: '斑马纹',
+                border: '边框',
+                height: '高度',
+                pageSize: '每页数量'
+            },
+            event: {
+                add: '添加时触发',
+                edit: '编辑时触发',
+                delete: '删除时触发',
+                'selection-change': '选择变化时触发',
+                'cell-change': '单元格变化时触发'
+            }
+        },
+        'nested-form': {
+            name: '嵌套表单',
+            info: '嵌套表单容器，支持多层级子表单',
+            props: {
+                title: '标题',
+                disabled: '禁用',
+                required: '必填',
+                min: '最小数量',
+                max: '最大数量',
+                showAdd: '显示添加按钮',
+                showDelete: '显示删除按钮',
+                sortable: '可排序',
+                expandable: '可展开',
+                showPagination: '显示分页',
+                pageSize: '每页数量'
+            },
+            event: {
+                add: '添加子项时触发',
+                remove: '删除子项时触发',
+                expand: '展开/收起时触发',
+                'page-change': '页码变化时触发'
+            }
+        },
+        'nested-table-form': {
+            name: '嵌套表格表单',
+            info: '树形表格表单，支持多层级数据',
+            props: {
+                title: '标题',
+                addable: '可添加',
+                editable: '可编辑',
+                deletable: '可删除',
+                expandable: '可展开',
+                defaultExpandAll: '默认展开全部',
+                showSelection: '显示选择',
+                showIndex: '显示序号',
+                stripe: '斑马纹',
+                border: '边框',
+                height: '高度'
+            },
+            event: {
+                add: '添加时触发',
+                edit: '编辑时触发',
+                delete: '删除时触发',
+                'add-child': '添加子项时触发',
+                'delete-child': '删除子项时触发',
+                'expand-change': '展开变化时触发',
+                'selection-change': '选择变化时触发'
+            }
+        },
+        'print-form': {
+            name: '打印表单',
+            info: '打印友好的表单渲染器',
+            props: {
+                title: '标题',
+                subtitle: '副标题',
+                disabled: '禁用',
+                showHeader: '显示头部',
+                showFooter: '显示底部',
+                showActions: '显示操作按钮',
+                showPrintTime: '显示打印时间',
+                showPage: '显示页码',
+                paperSize: '纸张大小',
+                orientation: '方向',
+                margin: '边距'
+            },
+            event: {}
+        },
+        'step-form-item': {
+            name: '步骤项',
+            info: '步骤表单的子项组件',
+            props: {
+                label: '标签',
+                description: '描述',
+                fields: '字段',
+                isActive: '是否激活',
+                isCompleted: '是否完成',
+                showExpand: '显示展开',
+                showActions: '显示操作',
+                showPrev: '显示上一步',
+                showNext: '显示下一步',
+                showSubmit: '显示提交'
+            },
+            event: {
+                prev: '点击上一步时触发',
+                next: '点击下一步时触发',
+                submit: '点击提交时触发'
+            }
+        },
+        'm-step-form': {
+            name: '移动端步骤表单',
+            info: '移动端适用的多步骤表单',
+            props: {
+                steps: '步骤配置'
+            },
+            event: {
+                change: '变化时触发',
+                'step-change': '步骤切换时触发',
+                submit: '提交时触发'
+            }
         }
     },
 };

@@ -1,5 +1,3 @@
-import { makeRequiredRule } from '../../utils'
-
 export default {
   icon: 'View',
   name: 'infinite-table-form-view',

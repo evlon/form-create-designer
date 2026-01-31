@@ -1,28 +1,23 @@
-import { makeOptionsRule, makeRequiredRule, getInjectArg } from '../../utils';
+import {localeProps} from '../../utils';
 
 export default {
+    menu: 'aide',
     icon: 'icon-chart',
     name: 'FcEcharts',
-    title: '图表',
-    columns: [
-        makeOptionsRule('props'),
-    ],
-    rules: [
-        makeRequiredRule('FcEcharts'),
-    ],
-    getOptions(field, { t }) {
-        return [
-            { label: t('com.FcEcharts.props.width'), value: 'width', type: 'text' },
-            { label: t('com.FcEcharts.props.height'), value: 'height', type: 'number' },
-            { label: t('com.FcEcharts.props.theme'), value: 'theme', type: 'select', options: [
+    label: '图表',
+    props(_, {t}) {
+        return localeProps(t, 'FcEcharts.props', [
+            { type: 'input', field: 'width', label: '宽度' },
+            { type: 'inputNumber', field: 'height', label: '高度', props: { min: 100 } },
+            { type: 'select', field: 'theme', label: '主题', options: [
                 { label: '默认', value: 'default' },
                 { label: '暗黑', value: 'dark' }
             ]},
-            { label: t('com.FcEcharts.props.loading'), value: 'loading', type: 'switch' },
-            { label: t('com.FcEcharts.props.autoResize'), value: 'autoResize', type: 'switch' },
-        ];
+            { type: 'switch', field: 'loading', label: '加载中' },
+            { type: 'switch', field: 'autoResize', label: '自动调整' },
+        ]);
     },
-    rule({ t }) {
+    rule({t}) {
         return {
             type: 'FcEcharts',
             field: 'echarts_' + Date.now(),
